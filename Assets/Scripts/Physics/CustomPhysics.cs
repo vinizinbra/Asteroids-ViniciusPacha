@@ -12,6 +12,7 @@ public class CustomPhysics : MonoBehaviour
     private float currentTime;
     private float accumulator;
     public float gravity = 10;
+    public AsteroidGameConfigAsset mapConfig;
     private Thread physicsThread;
     void Start()
     {
@@ -85,6 +86,15 @@ public class CustomPhysics : MonoBehaviour
             body.Velocity += frictionVector;
             body.Velocity += body.Force / body.Mass * dt;
             body.Position += body.Velocity * dt;
+            
+            if (body.Position.x > mapConfig.gameArea.x)
+                body.Position.x -= mapConfig.gameArea.x * 2;
+            else if (body.Position.x < -mapConfig.gameArea.x)
+                body.Position.x += mapConfig.gameArea.x * 2;
+            else if (body.Position.y < -mapConfig.gameArea.y)
+                body.Position.y += mapConfig.gameArea.y * 2;
+            else if (body.Position.y > mapConfig.gameArea.y)
+                body.Position.y -= mapConfig.gameArea.y * 2;
 
             body.Force = Vector3.zero; // reset net force at the end
         }

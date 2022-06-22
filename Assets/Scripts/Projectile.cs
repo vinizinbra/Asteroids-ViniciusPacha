@@ -1,13 +1,14 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public MyRigidbodyObject rbd;
-
+    public bool alive = true;
     private void Awake()
     {
-        rbd.OnCollision.AddListener(OnCollision);
+        rbd.OnCollision.AddListener( OnCollision );
     }
 
     private void OnDestroy()
@@ -19,8 +20,17 @@ public class Projectile : MonoBehaviour
     {
         if (other.collider.tag == MyCollider.Tag.ASTEROID)
         {
-            Destroy(this.gameObject);
+            CustomPhysics.objectList.Remove(this.rbd);
+            CustomPhysics.objectList.Remove(other);
         }
     }
-    
+
+    private void Update()
+    {
+        if (!CustomPhysics.objectList.Contains(rbd))
+        {
+            Debug.Break();
+            Destroy(gameObject);
+        }
+    }
 }

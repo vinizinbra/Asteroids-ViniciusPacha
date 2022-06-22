@@ -106,6 +106,9 @@ MonoBehaviour:
   angle: 0
   airdrag: 0
   Mass: 0.5
+  OnCollision:
+    m_PersistentCalls:
+      m_Calls: []
   collider: {fileID: 6085296320683255279}
 --- !u!114 &6085296320683255279
 MonoBehaviour:
@@ -146,5 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32836aa9e63f4a3bb06be04077abc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 3
+  level: 2
   force: 5

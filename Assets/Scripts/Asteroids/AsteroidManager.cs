@@ -27,7 +27,9 @@ public class AsteroidManager : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             var randomPosition = GenerateRandomPosition();
-            CreateAsteroid(0,randomPosition);
+            var a = CreateAsteroid(0,randomPosition);
+            var dir = PlayerManager.instance.player.transform.position - randomPosition.ToVector3();
+            a.SetDirection(dir);
         }
     }
 
@@ -36,8 +38,8 @@ public class AsteroidManager : MonoBehaviour
         Vector2 randomPosition;
         do
         {
-            float randomX = Random.Range(-config.gameArea.x / 2.0f, config.gameArea.x / 2.0f);
-            float randomY = Random.Range(-config.gameArea.y / 2.0f, config.gameArea.y / 2.0f);
+            float randomX = Random.Range(-config.gameArea.x, config.gameArea.x);
+            float randomY = Random.Range(-config.gameArea.y, config.gameArea.y);
             randomPosition = new Vector2(randomX, randomY);
 
         } while (IsNearPlayer(randomPosition));
