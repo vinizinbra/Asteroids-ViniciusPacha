@@ -17,6 +17,13 @@ public class MyCollider : MonoBehaviour
     {
         float maxDistance = objA.collider.radius + objB.collider.radius;
         float totalDistance = Vector2.Distance(objA.Position, objB.Position);
-        return totalDistance < maxDistance;
+        return totalDistance < (maxDistance-1);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        
+        Gizmos.DrawWireSphere(transform.position,radius);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
-    public ShipController player;
+    public List<Ship> players = new List<Ship>();
 
     private void Awake()
     {

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: AsteroidConfig
   m_EditorClassIdentifier: 
   gameArea: {x: 73, y: 40}
-  distanceFromPlayer: 30
+  distanceFromPlayer: 50

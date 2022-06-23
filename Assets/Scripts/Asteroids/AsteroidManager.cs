@@ -7,12 +7,12 @@ using Random = UnityEngine.Random;
 
 public class AsteroidManager : MonoBehaviour
 {
-    public AsteroidGameConfigAsset config;
-
+    public GameConfigData config;
+    public int asteroidIdCounter = 0;
     public Asteroid[] asteroidPrefabs;
-
+    public int asteroidCount = 1;
     public static AsteroidManager instance;
-
+    
     private void Awake()
     {
         instance = this;
@@ -24,15 +24,19 @@ public class AsteroidManager : MonoBehaviour
     }
     void StartGame()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < asteroidCount; i++)
         {
             var randomPosition = GenerateRandomPosition();
-            var a = CreateAsteroid(0,randomPosition);
-            var dir = PlayerManager.instance.player.transform.position - randomPosition.ToVector3();
+            var a = CreateAsteroid(asteroidPrefabs.Length-1,randomPosition);
+            var dir = SetFirstDirection(randomPosition.ToVector3());
             a.SetDirection(dir);
         }
     }
 
+    Vector3 SetFirstDirection(Vector3 from)
+    {
+        return PlayerManager.instance.players[0].transform.position - from;
+    }
     public Vector2 GenerateRandomPosition()
     {
         Vector2 randomPosition;
@@ -48,13 +52,15 @@ public class AsteroidManager : MonoBehaviour
     }
     public Asteroid CreateAsteroid(int index, Vector2 position)
     {
+        asteroidIdCounter++;
         var go = Instantiate(asteroidPrefabs[index],position,Quaternion.identity);
+        go.name += string.Format("ID {0}", asteroidIdCounter);
         return go;
     }
 
     bool IsNearPlayer(Vector2 randomPosition)
     {
-        return Vector2.Distance(PlayerManager.instance.player.rbd.Position, randomPosition) < config.distanceFromPlayer;
+        return Vector2.Distance(PlayerManager.instance.players[0].rbd.Position, randomPosition) < config.distanceFromPlayer;
     }
     
     

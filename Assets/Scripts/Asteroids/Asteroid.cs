@@ -3,50 +3,39 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class Asteroid : MonoBehaviour
-{
-    public int level = 1;
-    private MyRigidbodyObject rbd;
-    public float force;
 
-    private bool alive = true;
+public class Asteroid : MyMonoBehaviour
+{
+    [HideInInspector]
+    public MyRigidbodyObject rbd;
+    
+    public AsteroidData data;
 
     void Awake()
     {
         rbd = GetComponent<MyRigidbodyObject>();
     }
-    public void OnDestroy()
-    {
-        Debug.Log("destroyAsteroid");
-        level++;
-        if (level < 3)
-        {
-            for (int i = 0; i <= level; i++)
-            {
-                var random = Random.insideUnitCircle.normalized*5;
-                var a = AsteroidManager.instance.CreateAsteroid(level, transform.position + new Vector3(random.x,random.y));
-                a.level = level;
-                a.SetDirection(random.normalized*force);
-            }
-            
-        }
 
-        Destroy(this.gameObject);
+    public override void SafeOnDestroy()
+    {
+        CreateAsteroids();
     }
 
     public void SetDirection(Vector2 direction)
     {
-        rbd.AddForce(direction.normalized,force,true);
-        
+        rbd.AddForce(direction.normalized,data.initialForce,true);
     }
 
-    private void Update()
+    public void CreateAsteroids()
     {
-        if (!CustomPhysics.objectList.Contains(rbd))
+        for (int i = 0; i < data.generateAsteroids; i++)
         {
-            Destroy(gameObject);
+            var random = Random.insideUnitCircle.normalized*5;
+            var a = AsteroidManager.instance.CreateAsteroid((int)data.asteroidType, transform.position + new Vector3(random.x,random.y));
+            a.SetDirection(random.normalized*data.initialForce);
         }
     }
 }

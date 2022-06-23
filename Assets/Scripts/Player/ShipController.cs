@@ -1,37 +1,67 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipController : MonoBehaviour
+public class ShipController : MyMonoBehaviour
 {
-    public PlayerConfigAsset config;
-    
+    public Ship shipEntity;
     public MyPlayerInput input;
-    public MyRigidbodyObject rbd;
-    public Projectile projectilePrefab;
-    void Start()
+    
+    private void Awake()
     {
+        shipEntity.rbd.onCollision.AddListener( OnCollision );
+    }
+    public override void MyFixedUpdate()
+    {
+        shipEntity.collisionDelay -= MyPhysics.FIXED_TIME_STEP;
         
+        if (input.input.right)
+            shipEntity.rbd.angle -= shipEntity.data.rotationSpeed*MyPhysics.FIXED_TIME_STEP;
+        if (input.input.left)
+            shipEntity.rbd.angle += shipEntity.data.rotationSpeed*MyPhysics.FIXED_TIME_STEP;
+        
+        if (shipEntity.accelerate)
+            shipEntity.rbd.AddForce(Vector2.up.Rotate(shipEntity.rbd.angle) ,shipEntity.data.propulsionSpeed);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (input.input.right)
-            rbd.angle -= config.rotationSpeed*Time.deltaTime;
-        if (input.input.left)
-            rbd.angle += config.rotationSpeed*Time.deltaTime;
-        if (input.input.up)
-            rbd.AddForce(transform.right,config.propulsionSpeed);;
+        shipEntity.accelerate = input.input.up;
+        
         if (input.input.space)
             CreateProjectile();
-
     }
 
     void CreateProjectile()
     {
-        var go = Instantiate(projectilePrefab, transform.position,transform.rotation);
-        go.rbd.AddForce(transform.right,config.shootForce,true);
-        Destroy(go.gameObject,2);
+        var go = Instantiate(shipEntity.data.projectilePrefab, shipEntity.rbd.Position,Quaternion.identity);
+        go.rbd.AddForce(transform.up,shipEntity.data.shootForce,true);
+        go.rbd.angle = shipEntity.rbd.angle;
+    }
+    
+    private void OnCollision(MyRigidbodyObject other)
+    {
+        if (shipEntity.collisionDelay > 0) return;
+        
+        if (other.collider.tag == MyCollider.Tag.ASTEROID)
+        {
+            GetHit();
+            other.isDestroyed = true;
+            MyPhysics.objectList.Remove(other);
+            
+
+        }
+    }
+
+    public void GetHit()
+    {
+        shipEntity.currentLife -= 1;
+        shipEntity.collisionDelay = shipEntity.data.collisionDelay;
+        if (shipEntity.currentLife <= 0)
+        {
+            shipEntity.rbd.MyDestroy();
+        }
+
     }
 }

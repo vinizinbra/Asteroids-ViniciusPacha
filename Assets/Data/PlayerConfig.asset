@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
   rotationSpeed: 4
-  propulsionSpeed: 10
-  shootForce: 30
+  propulsionSpeed: 14
+  shootForce: 50

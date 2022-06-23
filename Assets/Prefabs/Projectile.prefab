@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 704989519531438655}
   - component: {fileID: -409997328517884506}
   - component: {fileID: -5194665154608781556}
+  - component: {fileID: -8629399999170000703}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.9249475, b: 0.0141509175, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 32cd1d665b38f4f3a9d8559f7e57b9d3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,8 +105,12 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   Force: {x: 0, y: 0}
   angle: 0
-  airdrag: 0
-  Mass: 1
+  isDestroyed: 0
+  data: {fileID: 11400000, guid: 193da934633f341efbdd53ed7d3f1127, type: 2}
+  myComponents: []
+  onCollision:
+    m_PersistentCalls:
+      m_Calls: []
   collider: {fileID: 704989519531438655}
 --- !u!114 &704989519531438655
 MonoBehaviour:
@@ -133,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06137f49815f496486a3af45e7b4f657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbd: {fileID: 3025254557244629677}
+  projectile: {fileID: -8629399999170000703}
 --- !u!114 &-5194665154608781556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +152,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbodyObject: {fileID: 3025254557244629677}
+--- !u!114 &-8629399999170000703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271063299199078753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9795c8dea2f4e6f82abb326e8812e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDistance: 0
+  rbd: {fileID: 3025254557244629677}
+  data: {fileID: 11400000, guid: d7d756c5d15434590952bfca95df3a65, type: 2}
