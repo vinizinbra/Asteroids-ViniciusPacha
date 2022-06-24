@@ -7,7 +7,8 @@ public class ShipController : MyMonoBehaviour
 {
     public Ship shipEntity;
     public MyPlayerInput input;
-    
+
+  
     private void Awake()
     {
         shipEntity.rbd.onCollision.AddListener( OnCollision );
@@ -16,20 +17,20 @@ public class ShipController : MyMonoBehaviour
     {
         shipEntity.collisionDelay -= MyPhysics.FIXED_TIME_STEP;
         
-        if (input.input.right)
+        if (input.myInput.right)
             shipEntity.rbd.angle -= shipEntity.data.rotationSpeed*MyPhysics.FIXED_TIME_STEP;
-        if (input.input.left)
+        if (input.myInput.left)
             shipEntity.rbd.angle += shipEntity.data.rotationSpeed*MyPhysics.FIXED_TIME_STEP;
         
-        if (shipEntity.accelerate)
+        if (shipEntity.isThrusting)
             shipEntity.rbd.AddForce(Vector2.up.Rotate(shipEntity.rbd.angle) ,shipEntity.data.propulsionSpeed);
     }
 
     private void Update()
     {
-        shipEntity.accelerate = input.input.up;
+        shipEntity.isThrusting = input.myInput.up;
         
-        if (input.input.space)
+        if (input.myInput.fire)
             CreateProjectile();
     }
 

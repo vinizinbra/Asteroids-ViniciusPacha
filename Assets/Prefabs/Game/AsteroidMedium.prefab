@@ -4895,6 +4895,7 @@ GameObject:
   - component: {fileID: 1493522692551719945}
   - component: {fileID: 4117609492935132802}
   - component: {fileID: 2472508081705140514}
+  - component: {fileID: 1043331482142509558}
   m_Layer: 0
   m_Name: AsteroidMedium
   m_TagString: Untagged
@@ -4987,6 +4988,7 @@ MonoBehaviour:
   Force: {x: 0, y: 0}
   angle: 0
   isDestroyed: 0
+  isEnabled: 1
   data: {fileID: 11400000, guid: 86bc31c5e3fe34215b8410a3b9b929ef, type: 2}
   myComponents: []
   onCollision:
@@ -5032,6 +5034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32836aa9e63f4a3bb06be04077abc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rbd: {fileID: 0}
   data: {fileID: 11400000, guid: de6be6b8260764f57872627f01229743, type: 2}
 --- !u!114 &4117609492935132802
 MonoBehaviour:
@@ -5061,4 +5064,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10410a4d94d764e71b8da24b33e471d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isQuitting: 0
   particle: {fileID: 6153265780876836947}
+--- !u!114 &1043331482142509558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093548478828400080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad397d35185d44658b0a762673945b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 1493522692551719945}

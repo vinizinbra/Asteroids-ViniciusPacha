@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5194665154608781556}
   - component: {fileID: -8629399999170000703}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: ProjectileBlue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   Force: {x: 0, y: 0}
   angle: 0
   isDestroyed: 0
+  isEnabled: 1
   data: {fileID: 11400000, guid: 193da934633f341efbdd53ed7d3f1127, type: 2}
   myComponents: []
   onCollision:

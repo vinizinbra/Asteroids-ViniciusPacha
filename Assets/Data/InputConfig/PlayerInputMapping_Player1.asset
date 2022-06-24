@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7787fd68b67ac4b8280c9d71a74a1ed7, type: 3}
-  m_Name: ShipData
+  m_Script: {fileID: 11500000, guid: 64475332b735e485990956d7fa932fc1, type: 3}
+  m_Name: PlayerInputMapping_Player1
   m_EditorClassIdentifier: 
-  maxLife: 3
-  collisionDelay: 3
-  rotationSpeed: 4
-  propulsionSpeed: 18
-  shootForce: 50
-  projectilePrefab: {fileID: -8629399999170000703, guid: 03818ad16ba7046d2a139f77e53534cb, type: 3}
+  fire: 32
+  right: 100
+  left: 97
+  down: 115
+  up: 119

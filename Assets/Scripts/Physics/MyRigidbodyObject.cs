@@ -13,7 +13,7 @@ public class MyRigidbodyObject : MonoBehaviour
     public Vector2 Force;
     public float angle;
     public bool isDestroyed;
-    //basic data
+    public bool isEnabled = true;
     public MyRigidbodyData data;
     public List<MyMonoBehaviour> myComponents = new List<MyMonoBehaviour>();
     public UnityEvent<MyRigidbodyObject> onCollision = new UnityEvent<MyRigidbodyObject>();
@@ -34,7 +34,6 @@ public class MyRigidbodyObject : MonoBehaviour
     }
     void Awake()
     {
-        Debug.Log(gameObject.name);
         Init();
         myComponents = GetComponents<MyMonoBehaviour>().ToList();
         MyPhysics.AddBody(this);

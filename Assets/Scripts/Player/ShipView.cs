@@ -12,17 +12,28 @@ public class ShipView : MonoBehaviour
     public SpriteRenderer sprite;
     [FormerlySerializedAs("particle")] public ParticleSystem propulsionFx;
 
+    void Start()
+    {
+        PlayerManager.Instance.onChangePlayers.AddListener(UpdateShipView);
+    }
+
+    void UpdateShipView()
+    {
+        gameObject.SetActive(ship.currentLife > 0 && ship.owner.IsConnected);
+    }
     private void Update()
     {
         Color c = Color.white;
         c.a = ship.collisionDelay > 0 ? 0.3f : 1;
         sprite.color = c;
-        if(!propulsionFx.isPlaying && ship.accelerate)
+        if(!propulsionFx.isPlaying && ship.isThrusting)
             propulsionFx.Play();
-        else if(!ship.accelerate)
+        else if(!ship.isThrusting)
         {
             propulsionFx.Stop();
         }
+
+        UpdateShipView();
     }
 
     private void OnDrawGizmosSelected()

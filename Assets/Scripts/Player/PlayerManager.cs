@@ -1,15 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager instance;
-    public List<Ship> players = new List<Ship>();
-
+    public static PlayerManager Instance;
+    public List<Player> players;
+    [HideInInspector]
+    public UnityEvent onChangePlayers;
     private void Awake()
     {
-        instance = this;
+        Instance = this;
+        
+        DontDestroyOnLoad(this);
     }
+
 }

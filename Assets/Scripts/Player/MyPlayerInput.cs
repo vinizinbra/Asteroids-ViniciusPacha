@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MyPlayerInput : MonoBehaviour
 {
+    private Ship ship;
+    
     [System.Serializable]
     public struct PlayerInput
     {
@@ -12,22 +15,24 @@ public class MyPlayerInput : MonoBehaviour
         public bool left;
         public bool down;
         public bool up;
-        public bool space;
+        public bool fire;
     }
 
-    public PlayerInput input = new PlayerInput();
-    void Start()
+    public PlayerInput myInput = new PlayerInput();
+
+    void Awake()
     {
-        
+        ship = GetComponent<Ship>();
     }
-
     // Update is called once per frame
     void Update()
     {
-        input.right = Input.GetKey(KeyCode.RightArrow);
-        input.left = Input.GetKey(KeyCode.LeftArrow);
-        input.up = Input.GetKey(KeyCode.UpArrow);
-        input.down = Input.GetKey(KeyCode.DownArrow);
-        input.space = Input.GetKeyDown(KeyCode.Space);
+        if (ship.owner == null) return;
+        
+        myInput.right = Input.GetKey(ship.owner.input.right);
+        myInput.left = Input.GetKey(ship.owner.input.left);
+        myInput.up = Input.GetKey(ship.owner.input.thrust);
+        myInput.down = Input.GetKey(ship.owner.input.down);
+        myInput.fire = Input.GetKeyDown(ship.owner.input.fire);
     }
 }

@@ -5,29 +5,31 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class MyPhysics : MonoBehaviour
 {
-    const float MAX_DELTA = 0.3f;
+    public const float MAX_DELTA = 0.3f;
     public const float FIXED_TIME_STEP = 0.02f;
     private float currentTime;
     private float accumulator;
-    public float debugCounter;
-    public float gravity = 10;
     public GameConfigData mapConfig;
     private Thread physicsThread;
     
-    void Start()
-    {
-        physicsThread = new Thread( PhysicsLoop);
-        physicsThread.Start();
-        
-    }
     public static List<MyRigidbodyObject> objectList = new List<MyRigidbodyObject>();
 
-    void Update()
+    void Start()
     {
-        debugCounter = objectList.Count;
+        GameManager.Instance.onGameStarted.AddListener(StartSimulation);
+        GameManager.Instance.onGameOver.AddListener(StopSimulation);
+
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.onGameStarted.RemoveListener(StartSimulation);
+        GameManager.Instance.onGameOver.RemoveListener(StopSimulation);
+
     }
 
     public static void AddBody(MyRigidbodyObject obj)
@@ -62,31 +64,44 @@ public class MyPhysics : MonoBehaviour
                 accumulator -= step;
             }
 
+            /*
             float alpha = accumulator / (FIXED_TIME_STEP * 1);
         
             foreach(var body in objectList)
             {
                 body.Interpolate(alpha);
             }
-            
+            */
             Thread.Sleep((int)(FIXED_TIME_STEP * 1000));
             realtimeSinceStartup += FIXED_TIME_STEP;
             
         }
-        
-        
     }
 
     private void OnApplicationQuit()
     {
-        physicsThread.Abort();
+        if(physicsThread != null)
+            physicsThread.Abort();
     }
 
+    public void StopSimulation()
+    {
+        physicsThread.Abort();
+    }
+    public void StartSimulation()
+    {
+        physicsThread = new Thread( PhysicsLoop);
+        physicsThread.Start();
+    }
+    
     public void Step(float dt)
     {
         for (int i = 0; i < objectList.Count; i++)
         {
             var body = objectList[i];
+            
+            if (!body.isEnabled) continue;
+            
             var frictionVector = -body.Velocity * body.data.airdrag * dt;
             body.Velocity += frictionVector;
             body.Velocity += body.Force / body.data.mass * dt;
@@ -106,7 +121,7 @@ public class MyPhysics : MonoBehaviour
                 body.myComponents[j].MyFixedUpdate();
         }
         ResolveCollisions();
-
+        Debug.Log("ThreadRunning");
     }
 
     public void ResolveCollisions()

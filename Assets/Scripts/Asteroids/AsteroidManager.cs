@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class AsteroidManager : MonoBehaviour
 {
@@ -11,17 +6,23 @@ public class AsteroidManager : MonoBehaviour
     public int asteroidIdCounter = 0;
     public Asteroid[] asteroidPrefabs;
     public int asteroidCount = 1;
-    public static AsteroidManager instance;
+    public static AsteroidManager Instance;
     
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     void Start()
     {
-        StartGame();
+        GameManager.Instance.onGameStarted.AddListener(StartGame);
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.onGameStarted.RemoveListener(StartGame);
+    }
+
     void StartGame()
     {
         for (int i = 0; i < asteroidCount; i++)
@@ -35,7 +36,7 @@ public class AsteroidManager : MonoBehaviour
 
     Vector3 SetFirstDirection(Vector3 from)
     {
-        return PlayerManager.instance.players[0].transform.position - from;
+        return Random.insideUnitCircle;
     }
     public Vector2 GenerateRandomPosition()
     {
@@ -60,7 +61,7 @@ public class AsteroidManager : MonoBehaviour
 
     bool IsNearPlayer(Vector2 randomPosition)
     {
-        return Vector2.Distance(PlayerManager.instance.players[0].rbd.Position, randomPosition) < config.distanceFromPlayer;
+        return Vector2.Distance(ShipManager.instance.ships[0].rbd.Position, randomPosition) < config.distanceFromPlayer;
     }
     
     
