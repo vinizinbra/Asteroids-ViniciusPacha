@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Manager<GameManager>
 {
-    public UnityEvent onGameStarted;
+    public UnityEvent onGameStarted = new UnityEvent();
     public UnityEvent onGameOver;
     public enum GameState
     {

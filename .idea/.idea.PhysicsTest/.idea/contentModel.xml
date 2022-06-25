@@ -29,6 +29,7 @@
           </e>
           <e p="GameManager.cs" t="Include" />
           <e p="Manager.cs" t="Include" />
+          <e p="MyEventHandler.cs" t="Include" />
           <e p="Physics" t="Include">
             <e p="CollisionEvent.cs" t="Include" />
             <e p="MyCollider.cs" t="Include" />
