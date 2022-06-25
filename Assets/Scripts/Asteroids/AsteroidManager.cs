@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class AsteroidManager : MonoBehaviour
 {
@@ -66,6 +68,10 @@ public class AsteroidManager : MonoBehaviour
     {
         return Vector2.Distance(ShipManager.Instance.ships[0].rbd.Position, randomPosition) < gameConfigData.distanceFromPlayer;
     }
-    
-    
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(transform.position,new Vector3(mapData.gameArea.x*2,mapData.gameArea.y*2,0.1f));
+    }
 }

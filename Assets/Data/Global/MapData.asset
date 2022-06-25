@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2677612b9e45498c9b16ae3e6bd3eaad, type: 3}
   m_Name: MapData
   m_EditorClassIdentifier: 
-  gameArea: {x: 75, y: 40}
+  gameArea: {x: 75, y: 45}

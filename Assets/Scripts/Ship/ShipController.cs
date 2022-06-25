@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShipController : MyMonoBehaviour
@@ -8,7 +5,6 @@ public class ShipController : MyMonoBehaviour
     public Ship shipEntity;
     public MyPlayerInput input;
 
-  
     private void Awake()
     {
         shipEntity.rbd.onCollision.AddListener( OnCollision );

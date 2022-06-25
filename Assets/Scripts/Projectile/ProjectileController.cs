@@ -1,8 +1,3 @@
-using System;
-using Unity.VisualScripting;
-using UnityEditor.Analytics;
-using UnityEngine;
-
 public class ProjectileController : MyMonoBehaviour
 {
     public Projectile projectile;
