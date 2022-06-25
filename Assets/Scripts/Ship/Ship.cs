@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class Ship : MonoBehaviour
@@ -15,6 +16,7 @@ public class Ship : MonoBehaviour
     
     private Vector2 _startPosition;
     private float _startAngle;
+
     private void Start()
     {
         _startPosition = rbd.Position;

@@ -21,22 +21,24 @@ public class MenuWindow : UiWindow
     public void StartGame()
     {
 	    GameManager.Instance.StartGame();
-	    UiWindow.Show<InGameWindow>();
     }
 
     private void Update()
     {
-	    foreach (var player in _playerManager.players)
+	    if (_playerManager)
 	    {
-		    if (Input.GetKeyDown(player.input.thrust))
+		    foreach (var player in _playerManager.players)
 		    {
-			    player.IsConnected = true;
-			    _playerManager.onChangePlayers.Invoke();
-		    }
-		    if (Input.GetKeyDown(player.input.down))
-		    {
-			    player.IsConnected = false;
-			    _playerManager.onChangePlayers.Invoke();
+			    if (Input.GetKeyDown(player.input.thrust))
+			    {
+				    player.IsConnected = true;
+				    _playerManager.onChangePlayers.Invoke();
+			    }
+			    if (Input.GetKeyDown(player.input.down))
+			    {
+				    player.IsConnected = false;
+				    _playerManager.onChangePlayers.Invoke();
+			    }
 		    }
 	    }
     }

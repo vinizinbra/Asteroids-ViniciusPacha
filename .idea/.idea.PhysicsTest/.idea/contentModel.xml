@@ -28,6 +28,7 @@
             <e p="PlayParticleOnDestroy.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
+          <e p="Manager.cs" t="Include" />
           <e p="Physics" t="Include">
             <e p="CollisionEvent.cs" t="Include" />
             <e p="MyCollider.cs" t="Include" />
@@ -60,6 +61,9 @@
           <e p="UI" t="Include">
             <e p="Base" t="Include">
               <e p="UiWindow.cs" t="Include" />
+            </e>
+            <e p="InGame" t="Include">
+              <e p="LifeWidget.cs" t="Include" />
             </e>
             <e p="WindowManager.cs" t="Include" />
             <e p="Windows" t="Include">

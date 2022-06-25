@@ -16,4 +16,4 @@ MonoBehaviour:
   right: 100
   left: 97
   down: 115
-  up: 119
+  thrust: 119

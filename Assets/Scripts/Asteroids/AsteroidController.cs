@@ -13,13 +13,17 @@ public class AsteroidController : MyMonoBehaviour
 
     public override void SafeOnDestroy()
     {
-        if(GameManager.Instance.currentGameState == GameManager.GameState.INGAME)
-            CreateAsteroids();
+        if (GameManager.Instance.currentGameState == GameManager.GameState.INGAME)
+        {
+            TryToCreateAsteroids();
+            AsteroidManager.Instance.onAsteroidDestroyed.Invoke(asteroid);
+        }
+        
     }
 
-    public void CreateAsteroids()
+    public void TryToCreateAsteroids()
     {
-        Debug.Log(asteroid.data.generateAsteroids);
+        AsteroidManager.Instance.onAsteroidDestroyed.Invoke(asteroid);
         
         for (int i = 0; i < asteroid.data.generateAsteroids; i++)
         {

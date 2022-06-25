@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShipManager : MonoBehaviour
 {
     public Ship[] ships;
-    public static ShipManager instance;
+    public static ShipManager Instance;
     public DebugPlayer debugPlayer;
+    
+    public UnityEvent onGetHit = new UnityEvent();
     void Awake()
     {
         if (PlayerManager.Instance != null)
@@ -23,7 +26,7 @@ public class ShipManager : MonoBehaviour
                 ships[i].owner = debugPlayer.players[i];
             }
         }
-        instance = this;
+        Instance = this;
         
     }
 

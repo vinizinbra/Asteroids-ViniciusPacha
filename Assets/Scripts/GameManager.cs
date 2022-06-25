@@ -1,16 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Manager<GameManager>
 {
-    public static GameManager Instance;
     public UnityEvent onGameStarted;
     public UnityEvent onGameOver;
-    public UnityEvent onGameReset;
     public enum GameState
     {
         MENU,
@@ -19,16 +18,13 @@ public class GameManager : MonoBehaviour
     }
 
     public GameState currentGameState = GameState.MENU;
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
-        Instance = this;
-    }
 
     public void StartGame()
     {
         currentGameState = GameState.INGAME;
         onGameStarted.Invoke();
+        ShipManager.Instance.onGetHit.AddListener(CheckLoseCondition);
+        AsteroidManager.Instance.onAsteroidDestroyed.AddListener(CheckWinCondition);
         
     } 
     public void GameOver()
@@ -39,7 +35,32 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         currentGameState = GameState.MENU;
-        onGameReset.Invoke();
         SceneManager.LoadScene("GameScene");
+    }
+
+    public void CheckLoseCondition()
+    {
+        int totalLives = 0;
+        foreach (var ship in ShipManager.Instance.ships)
+        {
+            totalLives += ship.currentLife;
+        }
+
+        if (totalLives <= 0)
+        {
+            GameOver();
+        }
+    }
+    public void CheckWinCondition(Asteroid asteroid)
+    {
+        if (asteroid.data.generateAsteroids > 0) return;
+        
+        if(AsteroidManager.Instance.instantiatedAsteroids.Count <= 0)
+            GameOver();
+    }
+
+    private void Update()
+    {
+       
     }
 }

@@ -22,7 +22,6 @@ public class MyPhysics : MonoBehaviour
     {
         GameManager.Instance.onGameStarted.AddListener(StartSimulation);
         GameManager.Instance.onGameOver.AddListener(StopSimulation);
-
     }
 
     private void OnDestroy()

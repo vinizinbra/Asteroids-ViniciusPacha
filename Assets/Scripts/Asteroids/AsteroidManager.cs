@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AsteroidManager : MonoBehaviour
 {
@@ -7,7 +9,8 @@ public class AsteroidManager : MonoBehaviour
     public Asteroid[] asteroidPrefabs;
     public int asteroidCount = 1;
     public static AsteroidManager Instance;
-    
+    public List<Asteroid> instantiatedAsteroids = new List<Asteroid>();
+    public UnityEvent<Asteroid> onAsteroidDestroyed = new UnityEvent<Asteroid>();
     private void Awake()
     {
         Instance = this;
@@ -61,7 +64,7 @@ public class AsteroidManager : MonoBehaviour
 
     bool IsNearPlayer(Vector2 randomPosition)
     {
-        return Vector2.Distance(ShipManager.instance.ships[0].rbd.Position, randomPosition) < config.distanceFromPlayer;
+        return Vector2.Distance(ShipManager.Instance.ships[0].rbd.Position, randomPosition) < config.distanceFromPlayer;
     }
     
     
