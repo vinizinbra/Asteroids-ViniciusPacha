@@ -4894,7 +4894,6 @@ GameObject:
   - component: {fileID: 2751278149494102075}
   - component: {fileID: 1733594819027602696}
   - component: {fileID: 7663583060111546104}
-  - component: {fileID: 7609301346672520188}
   - component: {fileID: -5804069904270421825}
   m_Layer: 0
   m_Name: AsteroidBig
@@ -5048,24 +5047,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b16893408d284bb79af6af4a882fe9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroid: {fileID: 3451482301839657660}
   image: {fileID: 8621294944388503994}
   possibleSprites:
   - {fileID: 21300000, guid: aee4443a86cb74f798c29def0319cb21, type: 3}
   - {fileID: 21300000, guid: 7572b9a3dbb404651814345465f34040, type: 3}
---- !u!114 &7609301346672520188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5408296838334561125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10410a4d94d764e71b8da24b33e471d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isQuitting: 0
-  particle: {fileID: 7877307538161121624}
+  explosionParticle: {fileID: 7877307538161121624}
 --- !u!114 &-5804069904270421825
 MonoBehaviour:
   m_ObjectHideFlags: 0

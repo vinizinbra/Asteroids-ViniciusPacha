@@ -7,6 +7,6 @@ public class Player
 {
     public string name;
     public bool IsConnected;
-    public PlayerInputMapping input;
+    public PlayerInputMappingData input;
     
 }

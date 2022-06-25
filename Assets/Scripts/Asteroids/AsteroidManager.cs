@@ -4,13 +4,13 @@ using UnityEngine.Events;
 
 public class AsteroidManager : MonoBehaviour
 {
-    public GameConfigData config;
     public int asteroidIdCounter = 0;
     public Asteroid[] asteroidPrefabs;
-    public int asteroidCount = 1;
     public static AsteroidManager Instance;
     public List<Asteroid> instantiatedAsteroids = new List<Asteroid>();
     public UnityEvent<Asteroid> onAsteroidDestroyed = new UnityEvent<Asteroid>();
+    public MapData mapData;
+    public GameConfigData gameConfigData;
     private void Awake()
     {
         Instance = this;
@@ -28,7 +28,7 @@ public class AsteroidManager : MonoBehaviour
 
     void StartGame()
     {
-        for (int i = 0; i < asteroidCount; i++)
+        for (int i = 0; i < gameConfigData.startAsteroids + GameManager.Instance.level; i++)
         {
             var randomPosition = GenerateRandomPosition();
             var a = CreateAsteroid(asteroidPrefabs.Length-1,randomPosition);
@@ -46,8 +46,8 @@ public class AsteroidManager : MonoBehaviour
         Vector2 randomPosition;
         do
         {
-            float randomX = Random.Range(-config.gameArea.x, config.gameArea.x);
-            float randomY = Random.Range(-config.gameArea.y, config.gameArea.y);
+            float randomX = Random.Range(-mapData.gameArea.x, mapData.gameArea.x);
+            float randomY = Random.Range(-mapData.gameArea.y, mapData.gameArea.y);
             randomPosition = new Vector2(randomX, randomY);
 
         } while (IsNearPlayer(randomPosition));
@@ -64,7 +64,7 @@ public class AsteroidManager : MonoBehaviour
 
     bool IsNearPlayer(Vector2 randomPosition)
     {
-        return Vector2.Distance(ShipManager.Instance.ships[0].rbd.Position, randomPosition) < config.distanceFromPlayer;
+        return Vector2.Distance(ShipManager.Instance.ships[0].rbd.Position, randomPosition) < gameConfigData.distanceFromPlayer;
     }
     
     

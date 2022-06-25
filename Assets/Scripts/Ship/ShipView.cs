@@ -10,13 +10,30 @@ public class ShipView : MonoBehaviour
 {
     public Ship ship;
     public SpriteRenderer sprite;
-    [FormerlySerializedAs("particle")] public ParticleSystem propulsionFx;
+    public ParticleSystem propulsionFx;
+    public ParticleSystem explosionFx;
 
     void Start()
     {
-        PlayerManager.Instance.onChangePlayers.AddListener(UpdateShipView);
+        if(PlayerManager.Instance != null)
+            PlayerManager.Instance.onChangePlayers.AddListener(UpdateShipView);
+        MyEventHandler.Instance.onEvent.AddListener(OnShipDestroyed);
+
     }
 
+    private void OnShipDestroyed(MyEventBase ev)
+    {
+        if (ev is OnShipDestroyedEvent)
+        {
+            if ((ev as OnShipDestroyedEvent).shipObject == ship.rbd)
+                DeathFx();
+        }
+    }
+
+    private void DeathFx()
+    {
+        explosionFx.UnparentAndPlay();
+    }
     void UpdateShipView()
     {
         gameObject.SetActive(ship.currentLife > 0 && ship.owner.IsConnected);

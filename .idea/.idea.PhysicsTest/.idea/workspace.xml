@@ -23,12 +23,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61cff8f4-ceac-4c23-9bcb-bd212eb012f1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/MapData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/MapData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Asteroid/AsteroidBigData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Asteroid/AsteroidBigData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Asteroid/AsteroidMediumData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Asteroid/AsteroidMediumData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Asteroid/AsteroidSmallData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Asteroid/AsteroidSmallData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/AsteroidConfig.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/AsteroidConfig.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/InputConfig/PlayerInputMapping_Player1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/InputConfig/PlayerInputMapping_Player1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/InputConfig/PlayerInputMapping_Player2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/InputConfig/PlayerInputMapping_Player2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/PlayerConfig.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/PlayerConfig.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Ship/BlueShipData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Ship/BlueShipData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Ship/RedShipData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Ship/RedShipData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidBig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidBig.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidMedium.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidMedium.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidSmall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidSmall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/PlayerBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/PlayerBlue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/PlayerRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/PlayerRed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Asteroids/GameConfigData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/GameConfigData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Feedback/PlayParticleOnDestroy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Feedback/PlayParticleOnDestroy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/CollisionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/CollisionEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MyEventHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MyEventHandler.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/MyPhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/MyPhysics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputMapping.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputMappingData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputMapping.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ShipController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ShipController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ShipView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ShipView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,17 +75,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputMapping.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputMappingData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ship/ShipData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5A41D6B7-1898-42EC-A409-FD0B1C3E3DCF/0/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/DebugPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MyEventHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Feedback/PlayParticleOnDestroy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Physics/CollisionEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ship/ShipManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Physics/MyMonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bootstrap.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,19 +94,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/CustomPhysics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/PlayParticleOnDestroy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShipSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerConfigAsset.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ship/MyRigidbodyData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Feedback/PlayParticleOnDestroy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ship/ShipData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/GameConfigData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Projectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputData.cs" />
@@ -89,7 +116,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/GameOverWindow.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.15.17/Editor/PlasticSCM/UI/BoolSetting.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bootstrap.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/InGameWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/Asteroid.cs" />
@@ -99,15 +125,26 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/MenuWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyMonoBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Manager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/DebugPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Physics/CollisionEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyPhysics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MyEventHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/PlayerDestroyedEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/AsteroidDestroyedEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/OnShipDestroyedEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ship/ShipController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ship/ShipView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyPhysics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/GameConfigData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Manager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -176,17 +213,17 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="38" y="125" width="1592" height="810" key="VCS.FileHistoryDialog" timestamp="1656155099716">
+    <state x="38" y="125" width="1592" height="810" key="VCS.FileHistoryDialog" timestamp="1656164018748">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="38" y="125" width="1592" height="810" key="VCS.FileHistoryDialog/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656155099716" />
+    <state x="38" y="125" width="1592" height="810" key="VCS.FileHistoryDialog/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656164018748" />
     <state x="515" y="145" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1655914963101">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="515" y="145" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1655914963101" />
-    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1656159203859">
+    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1656164730163">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656159203859" />
+    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656164730163" />
   </component>
 </project>

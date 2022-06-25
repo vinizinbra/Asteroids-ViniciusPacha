@@ -50,18 +50,25 @@ public class ShipController : MyMonoBehaviour
             GetHit();
             other.isDestroyed = true;
             MyPhysics.objectList.Remove(other);
+            
+            OnAsteroidDestroyedEvent ev = new OnAsteroidDestroyedEvent();
+            ev.asteroidObject = other;
+            MyEventHandler.Instance.myEvents.Add(ev);
         }
     }
 
     public void GetHit()
     {
-        
         shipEntity.currentLife -= 1;
         ShipManager.Instance.onGetHit.Invoke();
         shipEntity.collisionDelay = shipEntity.data.collisionDelay;
         if (shipEntity.currentLife <= 0)
         {
             shipEntity.rbd.MyDestroy();
+            
+            OnShipDestroyedEvent ev = new OnShipDestroyedEvent();
+            ev.shipObject = shipEntity.rbd;
+            MyEventHandler.Instance.myEvents.Add(ev);
         }
         
     }

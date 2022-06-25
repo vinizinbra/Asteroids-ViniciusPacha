@@ -16,5 +16,11 @@ public static class Extensions
             v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta)
         );
     }
+    public static ParticleSystem UnparentAndPlay(this ParticleSystem particleSystem)
+    {
+        particleSystem.transform.parent = null;
+        particleSystem.Play();
+        return particleSystem;
+    }
 
 }

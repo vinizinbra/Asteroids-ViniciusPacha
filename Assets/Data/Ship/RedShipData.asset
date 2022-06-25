@@ -15,6 +15,6 @@ MonoBehaviour:
   maxLife: 3
   collisionDelay: 3
   rotationSpeed: 4
-  propulsionSpeed: 18
+  propulsionSpeed: 30
   shootForce: 50
   projectilePrefab: {fileID: -8629399999170000703, guid: 5f779dabdb7094cdd8aefb9e2d3ba0d6, type: 3}

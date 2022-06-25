@@ -9,12 +9,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : Manager<GameManager>
 {
     public UnityEvent onGameStarted = new UnityEvent();
-    public UnityEvent onGameOver;
+    public UnityEvent onGameOver = new UnityEvent();
+
+    public int level = 0;
     public enum GameState
     {
         MENU,
         INGAME,
-        GAMEOVER
+        GAMEOVER,
+        WIN
+        
     }
 
     public GameState currentGameState = GameState.MENU;
@@ -29,7 +33,16 @@ public class GameManager : Manager<GameManager>
     } 
     public void GameOver()
     {
+        level = 0;
         currentGameState = GameState.GAMEOVER;
+        onGameOver.Invoke();
+    }
+    public void Win()
+    {
+        if (currentGameState == GameState.WIN) return;
+        
+        level++;
+        currentGameState = GameState.WIN;
         onGameOver.Invoke();
     }
     public void Restart()
@@ -56,11 +69,7 @@ public class GameManager : Manager<GameManager>
         if (asteroid.data.generateAsteroids > 0) return;
         
         if(AsteroidManager.Instance.instantiatedAsteroids.Count <= 0)
-            GameOver();
+            Win();
     }
 
-    private void Update()
-    {
-       
-    }
 }

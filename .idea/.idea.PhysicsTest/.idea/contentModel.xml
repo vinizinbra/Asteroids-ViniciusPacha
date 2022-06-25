@@ -19,8 +19,15 @@
             <e p="AsteroidManager.cs" t="Include" />
             <e p="AsteroidView.cs" t="Include" />
             <e p="GameConfigData.cs" t="Include" />
+            <e p="MapData.cs" t="Include" />
           </e>
           <e p="Bootstrap.cs" t="Include" />
+          <e p="Events" t="Include">
+            <e p="MyEventBase.cs" t="Include" />
+            <e p="MyEventHandler.cs" t="Include" />
+            <e p="OnAsteroidDestroyedEvent.cs" t="Include" />
+            <e p="OnShipDestroyedEvent.cs" t="Include" />
+          </e>
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
           </e>
@@ -29,7 +36,6 @@
           </e>
           <e p="GameManager.cs" t="Include" />
           <e p="Manager.cs" t="Include" />
-          <e p="MyEventHandler.cs" t="Include" />
           <e p="Physics" t="Include">
             <e p="CollisionEvent.cs" t="Include" />
             <e p="MyCollider.cs" t="Include" />
@@ -44,10 +50,8 @@
             <e p="DebugPlayer.cs" t="Include" />
             <e p="MyPlayerInput.cs" t="Include" />
             <e p="Player.cs" t="Include" />
-            <e p="PlayerInputMapping.cs" t="Include" />
+            <e p="PlayerInputMappingData.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />
-            <e p="ShipController.cs" t="Include" />
-            <e p="ShipView.cs" t="Include" />
           </e>
           <e p="Projectile" t="Include">
             <e p="Projectile.cs" t="Include" />
@@ -56,8 +60,10 @@
           </e>
           <e p="Ship" t="Include">
             <e p="Ship.cs" t="Include" />
+            <e p="ShipController.cs" t="Include" />
             <e p="ShipData.cs" t="Include" />
             <e p="ShipManager.cs" t="Include" />
+            <e p="ShipView.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="Base" t="Include">
@@ -71,6 +77,7 @@
               <e p="GameOverWindow.cs" t="Include" />
               <e p="InGameWindow.cs" t="Include" />
               <e p="MenuWindow.cs" t="Include" />
+              <e p="WinWindow.cs" t="Include" />
             </e>
           </e>
         </e>

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bed6454d894b417085dca783ce3541f, type: 3}
   m_Name: AsteroidBigData
   m_EditorClassIdentifier: 
-  initialForce: 30
+  initialForce: 20
   generateAsteroids: 2
   asteroidType: 1

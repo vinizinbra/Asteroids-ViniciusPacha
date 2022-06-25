@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerInputMapping : ScriptableObject
+public class PlayerInputMappingData : ScriptableObject
 {
     public KeyCode fire;
     public KeyCode right;

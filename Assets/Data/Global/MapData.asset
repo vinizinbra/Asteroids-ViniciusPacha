@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ca377af2d0ac4bc7a60c862f6619f0b, type: 3}
-  m_Name: AsteroidConfig
+  m_Script: {fileID: 11500000, guid: 2677612b9e45498c9b16ae3e6bd3eaad, type: 3}
+  m_Name: MapData
   m_EditorClassIdentifier: 
-  gameArea: {x: 73, y: 40}
-  distanceFromPlayer: 50
+  gameArea: {x: 75, y: 40}

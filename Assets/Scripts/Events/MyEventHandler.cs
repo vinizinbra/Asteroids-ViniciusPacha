@@ -1,23 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MyEventHandler : MonoBehaviour
 {
+    public List<MyEventBase> myEvents = new List<MyEventBase>();
+
+    public UnityEvent<MyEventBase> onEvent;
+
     public static MyEventHandler Instance;
-    public List<MyCollision> collisionEvent = new List<MyCollision>();
+
     void Awake()
     {
         Instance = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        foreach (var c in collisionEvent)
+        foreach (var e in myEvents)
         {
-            c.ObjA.onCollision.Invoke(c.ObjB);
-            c.ObjB.onCollision.Invoke(c.ObjA);
+            onEvent.Invoke(e);
         }
+        myEvents.Clear();
     }
 }

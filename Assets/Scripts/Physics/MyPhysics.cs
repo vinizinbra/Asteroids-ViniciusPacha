@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MyPhysics : MonoBehaviour
 {
@@ -13,21 +14,23 @@ public class MyPhysics : MonoBehaviour
     public const float FIXED_TIME_STEP = 0.02f;
     private float currentTime;
     private float accumulator;
-    public GameConfigData mapConfig;
-    private Thread physicsThread;
+    public MapData mapConfig;
+    public GameConfigData gameConfig;
+    private Thread _physicsThread;
     
     public static List<MyRigidbodyObject> objectList = new List<MyRigidbodyObject>();
 
     void Start()
     {
         GameManager.Instance.onGameStarted.AddListener(StartSimulation);
-        GameManager.Instance.onGameOver.AddListener(StopSimulation);
+        //GameManager.Instance.onGameOver.AddListener(StopSimulation);
     }
 
     private void OnDestroy()
     {
+        StopSimulation();
         GameManager.Instance.onGameStarted.RemoveListener(StartSimulation);
-        GameManager.Instance.onGameOver.RemoveListener(StopSimulation);
+        //GameManager.Instance.onGameOver.RemoveListener(StopSimulation);
 
     }
 
@@ -79,18 +82,18 @@ public class MyPhysics : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        if(physicsThread != null)
-            physicsThread.Abort();
+        if(_physicsThread != null)
+            _physicsThread.Abort();
     }
 
     public void StopSimulation()
     {
-        physicsThread.Abort();
+        _physicsThread.Abort();
     }
     public void StartSimulation()
     {
-        physicsThread = new Thread( PhysicsLoop);
-        physicsThread.Start();
+        _physicsThread = new Thread( PhysicsLoop);
+        _physicsThread.Start();
     }
     
     public void Step(float dt)

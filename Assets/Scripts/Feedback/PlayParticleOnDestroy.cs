@@ -22,7 +22,6 @@ public class PlayParticleOnDestroy : MonoBehaviour
     {
         if(isQuitting)
             return;
-        particle.transform.parent = null;
-        particle.Play();
+        
     }
 }

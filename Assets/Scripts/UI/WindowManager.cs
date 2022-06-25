@@ -27,6 +27,9 @@ public class WindowManager : MonoBehaviour
             case GameManager.GameState.GAMEOVER:
                 UiWindow.Show<GameOverWindow>();
                 break;
+            case GameManager.GameState.WIN:
+                UiWindow.Show<WinWindow>();
+                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }

@@ -20,6 +20,8 @@ public class Manager<T> : MonoBehaviour where T: Component
                     GameObject newGo = new GameObject();
                     newGo.name = typeof(T).ToString();
                     _instance = newGo.AddComponent<T>();
+                    DontDestroyOnLoad(_instance);
+
                 }
             }
 
@@ -28,7 +30,6 @@ public class Manager<T> : MonoBehaviour where T: Component
     }
     public virtual void Awake()
     {
-        DontDestroyOnLoad(this);
         _instance = this as T;
     }
     

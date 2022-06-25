@@ -1,5 +1,6 @@
 using System;
 using Unity.VisualScripting;
+using UnityEditor.Analytics;
 using UnityEngine;
 
 public class ProjectileController : MyMonoBehaviour
@@ -33,6 +34,10 @@ public class ProjectileController : MyMonoBehaviour
         {
             projectile.rbd.MyDestroy();
             other.MyDestroy();
+            
+            OnAsteroidDestroyedEvent e = new OnAsteroidDestroyedEvent();
+            e.asteroidObject = other;
+            MyEventHandler.Instance.myEvents.Add(e);
         }
     }
 

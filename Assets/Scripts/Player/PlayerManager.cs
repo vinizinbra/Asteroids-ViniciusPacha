@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance;
     public List<Player> players;
     [HideInInspector]
-    public UnityEvent onChangePlayers;
+    public UnityEvent onChangePlayers = new UnityEvent();
     private void Awake()
     {
         Instance = this;
