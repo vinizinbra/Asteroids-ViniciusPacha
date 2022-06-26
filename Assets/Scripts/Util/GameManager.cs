@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,9 +29,28 @@ public class GameManager : Manager<GameManager>
         currentGameState = GameState.INGAME;
         onGameStarted.Invoke();
         ShipManager.Instance.onGetHit.AddListener(CheckLoseCondition);
-        AsteroidManager.Instance.onAsteroidDestroyed.AddListener(CheckWinCondition);
-        
-    } 
+        MyEventHandlerManager.Instance.onEvent.AddListener(OnAsteroidDestroyedEvent);
+        MyEventHandlerManager.Instance.onEvent.AddListener(OnShipDestroyedEvent);
+    }
+
+    private void OnShipDestroyedEvent(MyEventBase arg0)
+    {
+        if (arg0 is OnShipDestroyedEvent)
+        {
+            Debug.Log("OnShipDestroyedEvent");
+            CheckLoseCondition();
+        }    
+    }
+
+    private void OnAsteroidDestroyedEvent(MyEventBase arg0)
+    {
+        if (arg0 is OnAsteroidDestroyedEvent)
+        {
+            var asteroid = (arg0 as OnAsteroidDestroyedEvent).asteroidObject;
+            CheckWinCondition(asteroid);
+        }
+    }
+
     public void GameOver()
     {
         level = 0;
@@ -56,7 +76,8 @@ public class GameManager : Manager<GameManager>
         int totalLives = 0;
         foreach (var ship in ShipManager.Instance.ships)
         {
-            totalLives += ship.currentLife;
+            if(ship.owner.IsConnected)
+                totalLives += ship.currentLife;
         }
 
         if (totalLives <= 0)
@@ -68,7 +89,8 @@ public class GameManager : Manager<GameManager>
     {
         if (asteroid.data.generateAsteroids > 0) return;
         
-        if(AsteroidManager.Instance.instantiatedAsteroids.Count <= 0)
+        Debug.Log("OBJ IN LIST => "+MyPhysics.objectList.Count);
+        if(!MyPhysics.objectList.Any(x=> x is Asteroid && x.rbd.isEnabled))
             Win();
     }
 

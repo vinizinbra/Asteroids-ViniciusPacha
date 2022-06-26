@@ -17,7 +17,7 @@ public class ShipView : MonoBehaviour
     {
         if(PlayerManager.Instance != null)
             PlayerManager.Instance.onChangePlayers.AddListener(UpdateShipView);
-        MyEventHandler.Instance.onEvent.AddListener(OnShipDestroyed);
+        MyEventHandlerManager.Instance.onEvent.AddListener(OnShipDestroyed);
 
     }
 

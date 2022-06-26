@@ -1,5 +1,6 @@
 using System;
 using System.Resources;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -14,11 +15,9 @@ public class Entity : MonoBehaviour
 
     public virtual void Reset()
     { 
-        MyPhysics.RemoveBody(this);
         rbd.Force = Vector2.zero;
         rbd.Velocity = Vector2.zero;
         rbd.angle = 0;
-
     }
 
     public void OnEnable()
@@ -26,10 +25,11 @@ public class Entity : MonoBehaviour
         MyPhysics.AddBody(this);
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
-        MyPhysics.RemoveBody(this);
-    }
-    
+        if(GameManager.Instance.currentGameState != GameManager.GameState.INGAME)
+            MyPhysics.RemoveBody(this);
 
+        rbd.isEnabled = false;
+    }
 }

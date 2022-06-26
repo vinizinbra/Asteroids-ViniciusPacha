@@ -15,7 +15,7 @@ public class MyRigidbodyObject : MonoBehaviour
     public bool isDestroyed;
     public bool isEnabled = true;
     public MyRigidbodyData data;
-    public List<MyMonoBehaviour> myComponents = new List<MyMonoBehaviour>();
+    [FormerlySerializedAs("myComponents")] public List<SystemBase> mySystems = new List<SystemBase>();
     public UnityEvent<Entity> onCollision = new UnityEvent<Entity>();
     
     public void AddForce(Vector2 direction, float force, bool impulse = false)
@@ -35,7 +35,7 @@ public class MyRigidbodyObject : MonoBehaviour
     void Awake()
     {
         Init();
-        myComponents = GetComponents<MyMonoBehaviour>().ToList();
+        mySystems = GetComponents<SystemBase>().ToList();
     }
 
     private void Update()

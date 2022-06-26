@@ -34,11 +34,12 @@ public class MyPhysics : MonoBehaviour
 
     public static void AddBody(Entity obj)
     {
-        objectList.Add(obj);
+        if (!objectList.Contains(obj)) 
+            objectList.Add(obj);
     }
     public static void RemoveBody(Entity obj)
     {
-        objectList.Remove(obj);
+        //objectList.Remove(obj);
     }
 
     private void Update()
@@ -64,9 +65,7 @@ public class MyPhysics : MonoBehaviour
             while (accumulator >= FIXED_TIME_STEP * 1)
             {
                 float step = FIXED_TIME_STEP * 1;
-                //if(OnPreStep != null) OnPreStep();         
                 Step(step);
-                //if(OnPostStep != null) OnPostStep();
                 accumulator -= step;
             }
 
@@ -92,7 +91,15 @@ public class MyPhysics : MonoBehaviour
 
     public void StopSimulation()
     {
-        _physicsThread.Abort();
+        foreach (var o in objectList)
+        {
+            if (o is not Ship)
+                o.rbd.isEnabled = false;
+        }
+        CleanObjects();
+        
+        if(_physicsThread != null)
+            _physicsThread.Abort();
     }
     public void StartSimulation()
     {
@@ -123,13 +130,25 @@ public class MyPhysics : MonoBehaviour
                 body.Position.y -= mapConfig.gameArea.y * 2;
 
             body.Force = Vector3.zero; // reset net force at the end
-            for(int j = 0; j < body.myComponents.Count;j++)
-                body.myComponents[j].MyFixedUpdate();
+            for(int j = 0; j < body.mySystems.Count;j++)
+                body.mySystems[j].MyFixedUpdate();
         }
+
         ResolveCollisions();
+        //CleanObjects();
         Debug.Log("ThreadRunning");
     }
 
+    public void CleanObjects()
+    {
+        for (int i = objectList.Count-1; i >= 0 ; i-- )
+        {
+            if (!objectList[i].rbd.isEnabled)
+            {
+                //objectList.Remove(objectList[i]);
+            }
+        }
+    }
     public void ResolveCollisions()
     {
         List<MyCollision> collisions = new List<MyCollision>();
@@ -137,10 +156,14 @@ public class MyPhysics : MonoBehaviour
         for (int i = 0; i < objectList.Count; i++)
         {
             var objA = objectList[i];
+            
+            if (!objA.rbd.isEnabled) continue;
+            
             for (int j = 0; i < objectList.Count; j++)
             {
                 var objB = objectList[j];
-                
+                if (!objB.rbd.isEnabled) continue;
+
                 if (objA == objB) break;
                 
                 bool collided = objA.rbd.collider.CheckCollision(objA, objB);

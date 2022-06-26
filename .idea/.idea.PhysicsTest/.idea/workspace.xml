@@ -23,27 +23,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61cff8f4-ceac-4c23-9bcb-bd212eb012f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entity.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidBig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidBig.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidMedium.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidMedium.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidSmall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidSmall.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/ProjectileBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/ProjectileBlue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/ProjectileRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/ProjectileRed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Global/GameConfigData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Global/GameConfigData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bootstrap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bootstrap.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Asteroids/Asteroid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/Asteroid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandlerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandlerManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/OnAsteroidDestroyedEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/OnAsteroidDestroyedEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Events/OnShipDestroyedEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Events/OnShipDestroyedEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/MyMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/SystemBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/MyMonoBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/SystemBase.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/MyPhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/MyPhysics.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Physics/MyRigidbodyObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Physics/MyRigidbodyObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile/Projectile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ship/Ship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ship/Ship.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ship/ShipController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ship/ShipController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ship/ShipView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ship/ShipView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/MenuWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/MenuWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Util/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Util/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,34 +60,24 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputMappingData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ship/ShipData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5A41D6B7-1898-42EC-A409-FD0B1C3E3DCF/0/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Feedback/PlayParticleOnDestroy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ship/ShipManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F36002D-2A1E-4B48-9CC0-E61A94E816CA/16/e606dd04/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5A41D6B7-1898-42EC-A409-FD0B1C3E3DCF/0/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/DebugPlayer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5A41D6B7-1898-42EC-A409-FD0B1C3E3DCF/0/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Windows/WinWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Feedback/PlayParticleOnDestroy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Physics/CollisionEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ship/ShipManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pool/PoolData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandlerManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Physics/MyMonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Physics/SystemBase.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI 1/Windows/MenuScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI 1/Windows/GameOverWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI 1/Windows/InGameWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI 1/Windows/MenuWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI 1/WindowManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI 1/Base/UiWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Base/UiWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShipView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/MyPlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInputMapping.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/GameOverWindow.cs" />
@@ -93,17 +86,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ship/ShipManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ShipController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/MenuWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/DebugPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Physics/CollisionEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MyEventHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/PlayerDestroyedEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Events/AsteroidDestroyedEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Events/OnShipDestroyedEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Ship/ShipView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/GameConfigData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Manager.cs" />
@@ -111,22 +100,35 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/WindowManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/InGameWindow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyMonoBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/Asteroid.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.recorder@3.0.3/Editor/Sources/_FrameRequestComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PoolManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ship/Ship.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Projectile/Projectile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyRigidbodyObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyCollider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyPhysics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyMonoBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/Asteroid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/OnAsteroidDestroyedEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PoolManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Windows/MenuWindow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Ship/ShipView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/OnShipDestroyedEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ship/ShipController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Util/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/MyPhysics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/SystemBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Projectile/ProjectileController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pool/PoolData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pool/PoolManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Events/MyEventHandlerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Physics/Entity.cs" />
       </list>
     </option>
   </component>
@@ -203,13 +205,13 @@
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="515" y="145" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1655914963101" />
-    <state x="441" y="285" width="933" height="490" key="find.popup" timestamp="1656247987539">
+    <state x="441" y="285" width="936" height="490" key="find.popup" timestamp="1656256870875">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="441" y="285" width="933" height="490" key="find.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656247987539" />
-    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1656248688425">
+    <state x="441" y="285" width="936" height="490" key="find.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656256870875" />
+    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1656261878718">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656248688425" />
+    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656261878718" />
   </component>
 </project>

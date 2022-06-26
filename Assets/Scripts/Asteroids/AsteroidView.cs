@@ -18,20 +18,21 @@ public class AsteroidView : MonoBehaviour
 
     private void Start()
     {
-        MyEventHandler.Instance.onEvent.AddListener(OnAsteroidDestroyed);
+        MyEventHandlerManager.Instance.onEvent.AddListener(OnAsteroidDestroyed);
     }
 
     void OnAsteroidDestroyed(MyEventBase arg0)
     {
         if (arg0 is OnAsteroidDestroyedEvent)
         {
-            if((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid.rbd)
-                CreateExplosionParticle();
+            if ((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid)
+                CreateExplosionParticle(asteroid.rbd.Position);
         }
     }
 
-    public void CreateExplosionParticle()
+    public void CreateExplosionParticle(Vector3 position)
     {
+        explosionParticle.transform.position = position;
         explosionParticle.UnparentAndPlay();
     }
 }

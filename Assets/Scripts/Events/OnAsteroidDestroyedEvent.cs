@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class OnAsteroidDestroyedEvent : MyEventBase
 {
-    public MyRigidbodyObject asteroidObject;
+    public Asteroid asteroidObject;
 }

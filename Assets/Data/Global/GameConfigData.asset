@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceFromPlayer: 50
   asteroidForce: 20
-  startAsteroids: 3
+  startAsteroids: 2

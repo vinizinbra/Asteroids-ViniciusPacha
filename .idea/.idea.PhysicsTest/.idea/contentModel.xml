@@ -21,10 +21,9 @@
             <e p="GameConfigData.cs" t="Include" />
             <e p="MapData.cs" t="Include" />
           </e>
-          <e p="Entity.cs" t="Include" />
           <e p="Events" t="Include">
             <e p="MyEventBase.cs" t="Include" />
-            <e p="MyEventHandler.cs" t="Include" />
+            <e p="MyEventHandlerManager.cs" t="Include" />
             <e p="OnAsteroidDestroyedEvent.cs" t="Include" />
             <e p="OnShipDestroyedEvent.cs" t="Include" />
           </e>
@@ -36,12 +35,13 @@
           </e>
           <e p="Physics" t="Include">
             <e p="CollisionEvent.cs" t="Include" />
+            <e p="Entity.cs" t="Include" />
             <e p="MyCollider.cs" t="Include" />
             <e p="MyCollision.cs" t="Include" />
-            <e p="MyMonoBehaviour.cs" t="Include" />
             <e p="MyPhysics.cs" t="Include" />
             <e p="MyRigidbodyData.cs" t="Include" />
             <e p="MyRigidbodyObject.cs" t="Include" />
+            <e p="SystemBase.cs" t="Include" />
             <e p="UpdateRigidbodyView.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
@@ -51,8 +51,11 @@
             <e p="PlayerInputMappingData.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />
           </e>
-          <e p="Pool.cs" t="Include" />
-          <e p="PoolManager.cs" t="Include" />
+          <e p="Pool" t="Include">
+            <e p="Pool.cs" t="Include" />
+            <e p="PoolData.cs" t="Include" />
+            <e p="PoolManager.cs" t="Include" />
+          </e>
           <e p="Projectile" t="Include">
             <e p="Projectile.cs" t="Include" />
             <e p="ProjectileController.cs" t="Include" />

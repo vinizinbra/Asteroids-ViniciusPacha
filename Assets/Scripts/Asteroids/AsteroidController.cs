@@ -7,39 +7,31 @@ using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 
-public class AsteroidController : MyMonoBehaviour
+public class AsteroidController : SystemBase
 {
     public Asteroid asteroid;
 
     private void Start()
     {
-        MyEventHandler.Instance.onEvent.AddListener(OnAsteroidDestroyed);
+        MyEventHandlerManager.Instance.onEvent.AddListener(OnAsteroidDestroyed);
     }
 
     void OnAsteroidDestroyed(MyEventBase arg0)
     {
         if (arg0 is OnAsteroidDestroyedEvent)
         {
-            if((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid.rbd)
+            Debug.Log("on asteroid destroyed");
+
+            if ((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid)
+            {
+                Debug.Log("try create asteroids");
                 TryToCreateAsteroids();
+            }
         }
     }
-
-
-    public override void SafeOnDestroy()
-    {
-        if (GameManager.Instance.currentGameState == GameManager.GameState.INGAME)
-        {
-            TryToCreateAsteroids();
-            AsteroidManager.Instance.onAsteroidDestroyed.Invoke(asteroid);
-        }
-        
-    }
-
+    
     public void TryToCreateAsteroids()
     {
-        AsteroidManager.Instance.onAsteroidDestroyed.Invoke(asteroid);
-        
         for (int i = 0; i < asteroid.data.generateAsteroids; i++)
         {
             var random = Random.insideUnitCircle.normalized*5;

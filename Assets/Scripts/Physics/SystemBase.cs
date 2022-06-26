@@ -4,21 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MyMonoBehaviour : MonoBehaviour
+public class SystemBase : MonoBehaviour
 {
     private bool _isQuitting;
-
-    public virtual void SafeOnDestroy()
-    {
-        
-    }
-    
-    private void OnDestroy()
-    {
-        if (_isQuitting)
-            return;
-        SafeOnDestroy();
-    }
 
     public void OnApplicationQuit()
     {

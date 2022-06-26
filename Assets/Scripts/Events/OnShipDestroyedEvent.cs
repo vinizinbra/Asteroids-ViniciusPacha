@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class OnShipDestroyedEvent : MyEventBase
 {
-    public MyRigidbodyObject shipObject;
+    public Entity shipObject;
 }

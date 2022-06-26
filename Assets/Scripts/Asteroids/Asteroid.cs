@@ -14,12 +14,6 @@ public class Asteroid : Entity
     void Awake()
     {
         rbd = GetComponent<MyRigidbodyObject>();
-        AsteroidManager.Instance.instantiatedAsteroids.Add(this);
-    }
-
-    private void OnDestroy()
-    {
-        AsteroidManager.Instance.instantiatedAsteroids.Remove(this);
     }
 
     public void SetDirection(Vector2 direction)

@@ -9,8 +9,6 @@ public class AsteroidManager : MonoBehaviour
     public int asteroidIdCounter = 0;
     public Asteroid[] asteroidPrefabs;
     public static AsteroidManager Instance;
-    public List<Asteroid> instantiatedAsteroids = new List<Asteroid>();
-    public UnityEvent<Asteroid> onAsteroidDestroyed = new UnityEvent<Asteroid>();
     public MapData mapData;
     public GameConfigData gameConfigData;
     private void Awake()
@@ -22,6 +20,8 @@ public class AsteroidManager : MonoBehaviour
     {
         GameManager.Instance.onGameStarted.AddListener(StartGame);
     }
+
+    
 
     private void OnDestroy()
     {
@@ -43,6 +43,7 @@ public class AsteroidManager : MonoBehaviour
     {
         return Random.insideUnitCircle;
     }
+    
     public Vector2 GenerateRandomPosition()
     {
         Vector2 randomPosition;

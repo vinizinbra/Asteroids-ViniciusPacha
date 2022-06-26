@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShipController : MyMonoBehaviour
+public class ShipController : SystemBase
 {
     public Ship shipEntity;
     public MyPlayerInput input;
@@ -47,8 +47,8 @@ public class ShipController : MyMonoBehaviour
             PoolManager.Instance.DisableObjectFromPool(other);
             
             OnAsteroidDestroyedEvent ev = new OnAsteroidDestroyedEvent();
-            ev.asteroidObject = other.rbd;
-            MyEventHandler.Instance.myEvents.Add(ev);
+            ev.asteroidObject = other as Asteroid;
+            MyEventHandlerManager.Instance.myEvents.Add(ev);
         }
     }
 
@@ -62,8 +62,8 @@ public class ShipController : MyMonoBehaviour
             shipEntity.rbd.isEnabled = false;
             
             OnShipDestroyedEvent ev = new OnShipDestroyedEvent();
-            ev.shipObject = shipEntity.rbd;
-            MyEventHandler.Instance.myEvents.Add(ev);
+            ev.shipObject = shipEntity;
+            MyEventHandlerManager.Instance.myEvents.Add(ev);
         }
         
     }

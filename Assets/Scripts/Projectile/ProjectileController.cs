@@ -1,4 +1,4 @@
-public class ProjectileController : MyMonoBehaviour
+public class ProjectileController : SystemBase
 {
     public Projectile projectile;
     
@@ -31,8 +31,8 @@ public class ProjectileController : MyMonoBehaviour
             PoolManager.Instance.DisableObjectFromPool(asteroid);
 
             OnAsteroidDestroyedEvent e = new OnAsteroidDestroyedEvent();
-            e.asteroidObject = other.rbd;
-            MyEventHandler.Instance.myEvents.Add(e);
+            e.asteroidObject = other as Asteroid;
+            MyEventHandlerManager.Instance.myEvents.Add(e);
         }
     }
 
