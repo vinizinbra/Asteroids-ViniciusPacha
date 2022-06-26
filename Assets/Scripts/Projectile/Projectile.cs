@@ -2,11 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : Entity
 {
     public float currentDistance;
     
-    public MyRigidbodyObject rbd;
     
     public ProjectileData data;
+
+    public override void Reset()
+    {
+        base.Reset();
+        currentDistance = 0;
+        
+    }
 }

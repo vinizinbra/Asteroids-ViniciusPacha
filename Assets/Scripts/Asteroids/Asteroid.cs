@@ -7,11 +7,8 @@ using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 
-public class Asteroid : MonoBehaviour
+public class Asteroid : Entity
 {
-    [HideInInspector]
-    public MyRigidbodyObject rbd;
-    
     public AsteroidData data;
 
     void Awake()

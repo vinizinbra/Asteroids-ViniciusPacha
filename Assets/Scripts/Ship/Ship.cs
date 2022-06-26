@@ -5,11 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class Ship : MonoBehaviour
+public class Ship : Entity
 {
     public Player owner;
     public float collisionDelay = 0;
-    public MyRigidbodyObject rbd;
     public int currentLife;
     public ShipData data;
     public bool isThrusting;

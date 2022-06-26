@@ -11,6 +11,21 @@ public class AsteroidController : MyMonoBehaviour
 {
     public Asteroid asteroid;
 
+    private void Start()
+    {
+        MyEventHandler.Instance.onEvent.AddListener(OnAsteroidDestroyed);
+    }
+
+    void OnAsteroidDestroyed(MyEventBase arg0)
+    {
+        if (arg0 is OnAsteroidDestroyedEvent)
+        {
+            if((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid.rbd)
+                TryToCreateAsteroids();
+        }
+    }
+
+
     public override void SafeOnDestroy()
     {
         if (GameManager.Instance.currentGameState == GameManager.GameState.INGAME)

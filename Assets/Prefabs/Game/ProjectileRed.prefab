@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9795c8dea2f4e6f82abb326e8812e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDistance: 0
+  ID: ProjectileRed
   rbd: {fileID: 3025254557244629677}
+  currentDistance: 0
   data: {fileID: 11400000, guid: d7d756c5d15434590952bfca95df3a65, type: 2}

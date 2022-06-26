@@ -16,7 +16,7 @@ public class MyRigidbodyObject : MonoBehaviour
     public bool isEnabled = true;
     public MyRigidbodyData data;
     public List<MyMonoBehaviour> myComponents = new List<MyMonoBehaviour>();
-    public UnityEvent<MyRigidbodyObject> onCollision = new UnityEvent<MyRigidbodyObject>();
+    public UnityEvent<Entity> onCollision = new UnityEvent<Entity>();
     
     public void AddForce(Vector2 direction, float force, bool impulse = false)
     {
@@ -36,12 +36,6 @@ public class MyRigidbodyObject : MonoBehaviour
     {
         Init();
         myComponents = GetComponents<MyMonoBehaviour>().ToList();
-        MyPhysics.AddBody(this);
-    }
-
-    private void OnDestroy()
-    {
-        MyPhysics.RemoveBody(this);
     }
 
     private void Update()
@@ -50,11 +44,6 @@ public class MyRigidbodyObject : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    public void MyDestroy()
-    {
-        isDestroyed = true;
-        MyPhysics.RemoveBody(this);
-    }
     public void Interpolate(float t)
     {
        //transform.position += new Vector3(Velocity.x,Velocity.y,0) * t;

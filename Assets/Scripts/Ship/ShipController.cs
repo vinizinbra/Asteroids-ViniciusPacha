@@ -32,23 +32,22 @@ public class ShipController : MyMonoBehaviour
 
     void CreateProjectile()
     {
-        var go = Instantiate(shipEntity.data.projectilePrefab, shipEntity.rbd.Position,Quaternion.identity);
+        var go = PoolManager.Instance.CreateObjectFromPool(shipEntity.data.projectilePrefab, shipEntity.rbd.Position,0);
         go.rbd.AddForce(transform.up,shipEntity.data.shootForce,true);
         go.rbd.angle = shipEntity.rbd.angle;
     }
     
-    private void OnCollision(MyRigidbodyObject other)
+    private void OnCollision(Entity other)
     {
         if (shipEntity.collisionDelay > 0) return;
         
-        if (other.collider.tag == MyCollider.Tag.ASTEROID)
+        if (other is Asteroid)
         {
             GetHit();
-            other.isDestroyed = true;
-            MyPhysics.objectList.Remove(other);
+            PoolManager.Instance.DisableObjectFromPool(other);
             
             OnAsteroidDestroyedEvent ev = new OnAsteroidDestroyedEvent();
-            ev.asteroidObject = other;
+            ev.asteroidObject = other.rbd;
             MyEventHandler.Instance.myEvents.Add(ev);
         }
     }
@@ -60,7 +59,7 @@ public class ShipController : MyMonoBehaviour
         shipEntity.collisionDelay = shipEntity.data.collisionDelay;
         if (shipEntity.currentLife <= 0)
         {
-            shipEntity.rbd.MyDestroy();
+            shipEntity.rbd.isEnabled = false;
             
             OnShipDestroyedEvent ev = new OnShipDestroyedEvent();
             ev.shipObject = shipEntity.rbd;

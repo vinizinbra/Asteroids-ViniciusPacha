@@ -3,20 +3,12 @@ using UnityEngine;
 
 public class MyCollider : MonoBehaviour
 {
-    public enum Tag
-    {
-        PLAYER,
-        ASTEROID,
-        BULLET
-    }
-    
-    public Tag tag;
     public float radius;
 
-    public bool CheckCollision(MyRigidbodyObject objA,MyRigidbodyObject objB)
+    public bool CheckCollision(Entity objA,Entity objB)
     {
-        float maxDistance = objA.collider.radius + objB.collider.radius;
-        float totalDistance = Vector2.Distance(objA.Position, objB.Position);
+        float maxDistance = objA.rbd.collider.radius + objB.rbd.collider.radius;
+        float totalDistance = Vector2.Distance(objA.rbd.Position, objB.rbd.Position);
         return totalDistance < (maxDistance-1);
     }
 

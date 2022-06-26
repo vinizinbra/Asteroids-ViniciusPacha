@@ -59,9 +59,9 @@ public class AsteroidManager : MonoBehaviour
     public Asteroid CreateAsteroid(int index, Vector2 position)
     {
         asteroidIdCounter++;
-        var go = Instantiate(asteroidPrefabs[index],position,Quaternion.identity);
+        var go = PoolManager.Instance.CreateObjectFromPool(asteroidPrefabs[index],position,0);
         go.name += string.Format("ID {0}", asteroidIdCounter);
-        return go;
+        return go as Asteroid;
     }
 
     bool IsNearPlayer(Vector2 randomPosition)

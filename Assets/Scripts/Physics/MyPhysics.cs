@@ -18,33 +18,37 @@ public class MyPhysics : MonoBehaviour
     public GameConfigData gameConfig;
     private Thread _physicsThread;
     
-    public static List<MyRigidbodyObject> objectList = new List<MyRigidbodyObject>();
-
+    public static List<Entity> objectList = new List<Entity>();
+    public int count;
     void Start()
     {
         GameManager.Instance.onGameStarted.AddListener(StartSimulation);
-        //GameManager.Instance.onGameOver.AddListener(StopSimulation);
     }
 
     private void OnDestroy()
     {
         StopSimulation();
         GameManager.Instance.onGameStarted.RemoveListener(StartSimulation);
-        //GameManager.Instance.onGameOver.RemoveListener(StopSimulation);
 
     }
 
-    public static void AddBody(MyRigidbodyObject obj)
+    public static void AddBody(Entity obj)
     {
         objectList.Add(obj);
     }
-    public static void RemoveBody(MyRigidbodyObject obj)
+    public static void RemoveBody(Entity obj)
     {
         objectList.Remove(obj);
     }
-   
+
+    private void Update()
+    {
+        count = objectList.Count;
+    }
+
     void PhysicsLoop()
     {
+        count = objectList.Count;
         float realtimeSinceStartup = 0;
         while (true)
         {
@@ -100,7 +104,7 @@ public class MyPhysics : MonoBehaviour
     {
         for (int i = 0; i < objectList.Count; i++)
         {
-            var body = objectList[i];
+            var body = objectList[i].rbd;
             
             if (!body.isEnabled) continue;
             
@@ -139,7 +143,7 @@ public class MyPhysics : MonoBehaviour
                 
                 if (objA == objB) break;
                 
-                bool collided = objA.collider.CheckCollision(objA, objB);
+                bool collided = objA.rbd.collider.CheckCollision(objA, objB);
                 
                 if (collided)
                 {
@@ -158,8 +162,8 @@ public class MyPhysics : MonoBehaviour
     {
         foreach (var c in collisions)
         {
-            c.ObjA.onCollision.Invoke(c.ObjB);
-            c.ObjB.onCollision.Invoke(c.ObjA);
+            c.ObjA.rbd.onCollision.Invoke(c.ObjB);
+            c.ObjB.rbd.onCollision.Invoke(c.ObjA);
         }
     }
 }

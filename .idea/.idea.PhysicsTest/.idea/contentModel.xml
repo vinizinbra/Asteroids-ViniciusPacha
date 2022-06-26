@@ -21,6 +21,7 @@
             <e p="GameConfigData.cs" t="Include" />
             <e p="MapData.cs" t="Include" />
           </e>
+          <e p="Entity.cs" t="Include" />
           <e p="Events" t="Include">
             <e p="MyEventBase.cs" t="Include" />
             <e p="MyEventHandler.cs" t="Include" />
@@ -51,6 +52,7 @@
             <e p="PlayerManager.cs" t="Include" />
           </e>
           <e p="Pool.cs" t="Include" />
+          <e p="PoolManager.cs" t="Include" />
           <e p="Projectile" t="Include">
             <e p="Projectile.cs" t="Include" />
             <e p="ProjectileController.cs" t="Include" />

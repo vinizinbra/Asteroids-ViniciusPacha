@@ -1,4 +1,4 @@
 class MyCollision {
-    public MyRigidbodyObject ObjA;
-    public MyRigidbodyObject ObjB;
+    public Entity ObjA;
+    public Entity ObjB;
 };

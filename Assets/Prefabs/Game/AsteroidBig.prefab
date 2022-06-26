@@ -43,7 +43,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -4982,7 +4982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32836aa9e63f4a3bb06be04077abc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbd: {fileID: 0}
+  ID: AsteroidBig
+  rbd: {fileID: 440785553849977001}
   data: {fileID: 11400000, guid: fb68a3321016c40c8ac5c0efdd4c8e7c, type: 2}
 --- !u!114 &440785553849977001
 MonoBehaviour:
@@ -5020,7 +5021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0d31fa367e4460a55c10917bf1a27f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: 1
   radius: 11
 --- !u!114 &1733594819027602696
 MonoBehaviour:

@@ -13,8 +13,7 @@ public class ProjectileController : MyMonoBehaviour
         projectile.currentDistance += (projectile.rbd.Velocity * MyPhysics.FIXED_TIME_STEP).magnitude;
         if (projectile.currentDistance >= projectile.data.maxDistance)
         {
-            MyPhysics.RemoveBody(projectile.rbd);
-            projectile.rbd.isDestroyed = true;
+            PoolManager.Instance.DisableObjectFromPool(projectile);
         }
     }
 
@@ -23,15 +22,16 @@ public class ProjectileController : MyMonoBehaviour
         projectile.rbd.onCollision.RemoveListener(OnCollision);
     }
 
-    private void OnCollision(MyRigidbodyObject other)
+    private void OnCollision(Entity other)
     {
-        if (other.collider.tag == MyCollider.Tag.ASTEROID)
+        if (other is Asteroid)
         {
-            projectile.rbd.MyDestroy();
-            other.MyDestroy();
-            
+            PoolManager.Instance.DisableObjectFromPool(projectile);
+            var asteroid = other as Asteroid;
+            PoolManager.Instance.DisableObjectFromPool(asteroid);
+
             OnAsteroidDestroyedEvent e = new OnAsteroidDestroyedEvent();
-            e.asteroidObject = other;
+            e.asteroidObject = other.rbd;
             MyEventHandler.Instance.myEvents.Add(e);
         }
     }
