@@ -52,6 +52,7 @@ public class Pool : MonoBehaviour
         e.rbd.isEnabled = true;
         e.Reset();
         e.gameObject.SetActive(true);
+        MyPhysics.AddBody(e);
         return e;
     }
 
@@ -59,6 +60,7 @@ public class Pool : MonoBehaviour
     {
         e.rbd.isEnabled = false;
         e.Reset();
+        MyPhysics.RemoveBody(e);
         return e;
     }
 }

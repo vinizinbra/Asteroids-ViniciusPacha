@@ -12,7 +12,6 @@ public class MyRigidbodyObject : MonoBehaviour
     public Vector2 Velocity;
     public Vector2 Force;
     public float angle;
-    public bool isDestroyed;
     public bool isEnabled = true;
     public MyRigidbodyData data;
     [FormerlySerializedAs("myComponents")] public List<SystemBase> mySystems = new List<SystemBase>();
@@ -37,13 +36,6 @@ public class MyRigidbodyObject : MonoBehaviour
         Init();
         mySystems = GetComponents<SystemBase>().ToList();
     }
-
-    private void Update()
-    {
-        if(isDestroyed)
-            Destroy(this.gameObject);
-    }
-
     public void Interpolate(float t)
     {
        //transform.position += new Vector3(Velocity.x,Velocity.y,0) * t;

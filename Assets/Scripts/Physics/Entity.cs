@@ -22,14 +22,12 @@ public class Entity : MonoBehaviour
 
     public void OnEnable()
     {
-        MyPhysics.AddBody(this);
+        if(!PoolManager.Instance.poolDictionary.ContainsKey(ID))
+            MyPhysics.AddBody(this);
     }
 
     public void OnDisable()
     {
-        if(GameManager.Instance.currentGameState != GameManager.GameState.INGAME)
-            MyPhysics.RemoveBody(this);
-
-        rbd.isEnabled = false;
+        MyPhysics.RemoveBody(this);
     }
 }

@@ -34,12 +34,11 @@ public class MyPhysics : MonoBehaviour
 
     public static void AddBody(Entity obj)
     {
-        if (!objectList.Contains(obj)) 
-            objectList.Add(obj);
+        objectList.Add(obj);
     }
     public static void RemoveBody(Entity obj)
     {
-        //objectList.Remove(obj);
+        objectList.Remove(obj);
     }
 
     private void Update()
@@ -135,7 +134,7 @@ public class MyPhysics : MonoBehaviour
         }
 
         ResolveCollisions();
-        //CleanObjects();
+        CleanObjects();
         Debug.Log("ThreadRunning");
     }
 
@@ -145,7 +144,7 @@ public class MyPhysics : MonoBehaviour
         {
             if (!objectList[i].rbd.isEnabled)
             {
-                //objectList.Remove(objectList[i]);
+                objectList.Remove(objectList[i]);
             }
         }
     }
