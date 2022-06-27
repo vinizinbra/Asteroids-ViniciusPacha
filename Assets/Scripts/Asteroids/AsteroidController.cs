@@ -1,39 +1,37 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using CustomPhysics;
+using MyEvents;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Random = UnityEngine.Random;
 
-
-public class AsteroidController : Controller
+namespace Asteroids
 {
-    public Asteroid asteroid;
-
-    private void Start()
+    public class AsteroidController : Controller
     {
-        MyEventHandlerManager.OnEvent.AddListener(OnAsteroidDestroyed);
-    }
+        public Asteroid asteroid;
 
-    void OnAsteroidDestroyed(MyEventBase arg0)
-    {
-        if (arg0 is OnAsteroidDestroyedEvent)
+        private void Start()
         {
-            if ((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid)
+            MyEventHandlerManager.OnEvent.AddListener(OnAsteroidDestroyed);
+        }
+
+        void OnAsteroidDestroyed(MyEventBase arg0)
+        {
+            if (arg0 is OnAsteroidDestroyedEvent)
             {
-                TryToCreateAsteroids();
+                if ((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid)
+                {
+                    TryToCreateAsteroids();
+                }
             }
         }
-    }
     
-    public void TryToCreateAsteroids()
-    {
-        for (int i = 0; i < asteroid.data.generateAsteroids; i++)
+        public void TryToCreateAsteroids()
         {
-            var random = Random.insideUnitCircle.normalized*5;
-            var a = AsteroidManager.Instance.CreateAsteroid((int)asteroid.data.asteroidType, transform.position + new Vector3(random.x,random.y));
-            a.SetDirection(random.normalized*asteroid.data.initialForce);
+            for (int i = 0; i < asteroid.data.generateAsteroids; i++)
+            {
+                var random = Random.insideUnitCircle.normalized*5;
+                var a = AsteroidManager.Instance.CreateAsteroid((int)asteroid.data.asteroidType, transform.position + new Vector3(random.x,random.y));
+                a.SetDirection(random.normalized*asteroid.data.initialForce);
+            }
         }
     }
 }

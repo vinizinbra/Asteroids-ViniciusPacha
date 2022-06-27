@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using CustomPhysics;
 
-public class Projectile : Entity
+namespace Projectile
 {
-    public float currentDistance;
-    
-    
-    public ProjectileData data;
-
-    public override void Reset()
+    public class Projectile : Entity
     {
-        base.Reset();
-        currentDistance = 0;
+        public float currentDistance;
+    
+    
+        public ProjectileData data;
+
+        public override void Reset()
+        {
+            base.Reset();
+            currentDistance = 0;
         
+        }
     }
 }

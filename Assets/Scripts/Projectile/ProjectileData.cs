@@ -1,8 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileData : ScriptableObject
+namespace Projectile
 {
-    public int maxDistance;
+    public class ProjectileData : ScriptableObject
+    {
+        public int maxDistance;
+    }
 }

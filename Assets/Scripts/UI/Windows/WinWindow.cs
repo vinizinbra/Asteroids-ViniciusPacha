@@ -1,22 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UI.Base;
 
-public class WinWindow : UiWindow
+namespace UI.Windows
 {
+	public class WinWindow : UiWindow
+	{
    
-    public override void Show()
-    {
-	    base.Show();
+		public override void Show()
+		{
+			base.Show();
 	   
-    }
+		}
 
-    public void Update()
-    {
-    }
+		public void Update()
+		{
+		}
     
-    public void Restart()
-    {
-	    GameManager.Instance.Restart();
-    }
+		public void Restart()
+		{
+			GameManager.Instance.Restart();
+		}
+	}
 }

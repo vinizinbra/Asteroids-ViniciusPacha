@@ -1,24 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using CustomPhysics;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Random = UnityEngine.Random;
 
 
-public class Asteroid : Entity
+namespace Asteroids
 {
-    public AsteroidData data;
-
-    void Awake()
+    public class Asteroid : Entity
     {
-        rbd = GetComponent<MyRigidbodyObject>();
-    }
+        public AsteroidData data;
 
-    public void SetDirection(Vector2 direction)
-    {
-        rbd.AddForce(direction.normalized,data.initialForce,true);
-    }
+        void Awake()
+        {
+            rbd = GetComponent<MyRigidbodyObject>();
+        }
 
+        public void SetDirection(Vector2 direction)
+        {
+            rbd.AddForce(direction.normalized,data.initialForce,true);
+        }
+
+    }
 }

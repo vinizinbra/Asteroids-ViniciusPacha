@@ -1,26 +1,26 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using Player;
+using UI.Base;
 
-public class MenuWindow : UiWindow
+namespace UI.Windows
 {
-	private PlayerManager _playerManager;
+	public class MenuWindow : UiWindow
+	{
+		private PlayerManager _playerManager;
 	
-	void Start()
-    {
-	    _playerManager = PlayerManager.Instance;
-    }
+		void Start()
+		{
+			_playerManager = PlayerManager.Instance;
+		}
    
-    public override void Show()
-    {
-	    base.Show();
-    }
+		public override void Show()
+		{
+			base.Show();
+		}
 
-    public void StartGame()
-    {
-	    GameManager.Instance.StartGame();
-    }
+		public void StartGame()
+		{
+			GameManager.Instance.StartGame();
+		}
 
+	}
 }

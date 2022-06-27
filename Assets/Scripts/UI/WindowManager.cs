@@ -1,48 +1,50 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UI.Base;
+using UI.Windows;
 
-public class WindowManager : Singleton<WindowManager>
+namespace UI
 {
-    public UiWindow[] uiWindows;
-
-    protected override void Awake()
+    public class WindowManager : Singleton<WindowManager>
     {
-        base.Awake();
-        
-        uiWindows = GetComponentsInChildren<UiWindow>(true);
-        UiWindow.Show<MenuWindow>();
-    }
+        public UiWindow[] uiWindows;
 
-    private void Start()
-    {
-        GameManager.OnGameStateChanged.AddListener(GameStateChanged);
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.OnGameStateChanged.RemoveListener(GameStateChanged);
-    }
-
-    public void GameStateChanged(GameManager.GameState currentGameState)
-    {
-        switch(currentGameState)
+        protected override void Awake()
         {
-            case GameManager.GameState.MENU:
-                UiWindow.Show<MenuWindow>();
-                break;
-            case GameManager.GameState.INGAME:
-                UiWindow.Show<InGameWindow>();
-                break;
-            case GameManager.GameState.GAMEOVER:
-                UiWindow.Show<GameOverWindow>();
-                break;
-            case GameManager.GameState.WIN:
-                UiWindow.Show<WinWindow>();
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
+            base.Awake();
+        
+            uiWindows = GetComponentsInChildren<UiWindow>(true);
+            UiWindow.Show<MenuWindow>();
+        }
+
+        private void Start()
+        {
+            GameManager.OnGameStateChanged.AddListener(GameStateChanged);
+        }
+
+        private void OnDestroy()
+        {
+            GameManager.OnGameStateChanged.RemoveListener(GameStateChanged);
+        }
+
+        public void GameStateChanged(GameManager.GameState currentGameState)
+        {
+            switch(currentGameState)
+            {
+                case GameManager.GameState.MENU:
+                    UiWindow.Show<MenuWindow>();
+                    break;
+                case GameManager.GameState.INGAME:
+                    UiWindow.Show<InGameWindow>();
+                    break;
+                case GameManager.GameState.GAMEOVER:
+                    UiWindow.Show<GameOverWindow>();
+                    break;
+                case GameManager.GameState.WIN:
+                    UiWindow.Show<WinWindow>();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

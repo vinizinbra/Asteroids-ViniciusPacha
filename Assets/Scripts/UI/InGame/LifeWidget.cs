@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class LifeWidget : MonoBehaviour
+namespace UI.InGame
 {
-    public GameObject[] lifeObjects;
-
-    public void Setup(int lives)
+    public class LifeWidget : MonoBehaviour
     {
-        for (int i = 0; i < lifeObjects.Length; i++)
+        public GameObject[] lifeObjects;
+
+        public void Setup(int lives)
         {
-            lifeObjects[i].SetActive(i<lives);
+            for (int i = 0; i < lifeObjects.Length; i++)
+            {
+                lifeObjects[i].SetActive(i<lives);
+            }
         }
-    }
-};
+    };
+}

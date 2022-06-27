@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using CustomPhysics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class PoolData : ScriptableObject
+namespace Pool
 {
-    public int initValue;
-    public Entity[] prefabs;
+    public class PoolData : ScriptableObject
+    {
+        public int initValue;
+        public Entity[] prefabs;
+    }
 }

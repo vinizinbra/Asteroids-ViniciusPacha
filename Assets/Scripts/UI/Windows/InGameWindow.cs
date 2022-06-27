@@ -1,46 +1,49 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Ship;
 using TMPro;
+using UI.Base;
+using UI.InGame;
 
-public class InGameWindow : UiWindow
+namespace UI.Windows
 {
-	public TMP_Text level;
-    public LifeWidget[] livesWidgets;
+	public class InGameWindow : UiWindow
+	{
+		public TMP_Text level;
+		public LifeWidget[] livesWidgets;
     
-    private ShipManager _shipManager;
-    public override void Show()
-    {
-	    base.Show();
-	    level.text = string.Format("Level {0}",GameManager.Instance.level);
-    }
+		private ShipManager _shipManager;
+		public override void Show()
+		{
+			base.Show();
+			level.text = string.Format("Level {0}",GameManager.Instance.level);
+		}
 
-    private void Start()
-    {
-	    _shipManager = ShipManager.Instance;
-    }
+		private void Start()
+		{
+			_shipManager = ShipManager.Instance;
+		}
 
-    public void GameOver()
-    {
-		GameManager.Instance.GameOver();
-    }
+		public void GameOver()
+		{
+			GameManager.Instance.GameOver();
+		}
 
-    private void Update()
-    {
-	    for (int i = 0; i < _shipManager.ships.Length; i++)
-	    {
-		    livesWidgets[i].gameObject.SetActive(_shipManager.ships[i].owner.IsConnected);
+		private void Update()
+		{
+			for (int i = 0; i < _shipManager.ships.Length; i++)
+			{
+				livesWidgets[i].gameObject.SetActive(_shipManager.ships[i].owner.IsConnected);
 
-		    if (_shipManager.ships[i].owner.IsConnected)
-		    {
-			    livesWidgets[i].Setup(_shipManager.ships[i].currentLife);
-		    }
-		    else
-		    {
-			    livesWidgets[i].Setup(0);
-		    }
+				if (_shipManager.ships[i].owner.IsConnected)
+				{
+					livesWidgets[i].Setup(_shipManager.ships[i].currentLife);
+				}
+				else
+				{
+					livesWidgets[i].Setup(0);
+				}
 		    
-	    }
+			}
 		    
-    }
+		}
+	}
 }

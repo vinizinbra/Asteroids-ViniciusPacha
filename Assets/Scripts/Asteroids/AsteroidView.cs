@@ -1,38 +1,40 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Extensions;
+using MyEvents;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class AsteroidView : MonoBehaviour
+namespace Asteroids
 {
-    public Asteroid asteroid;
-    public SpriteRenderer image;
-    public Sprite[] possibleSprites;
-    public ParticleSystem explosionParticle;
-    void Awake()
+    public class AsteroidView : MonoBehaviour
     {
-        image.sprite = possibleSprites[Random.Range(0, possibleSprites.Length)];
-        
-    }
-
-    private void Start()
-    {
-        MyEventHandlerManager.OnEvent.AddListener(OnAsteroidDestroyed);
-    }
-
-    void OnAsteroidDestroyed(MyEventBase arg0)
-    {
-        if (arg0 is OnAsteroidDestroyedEvent)
+        public Asteroid asteroid;
+        public SpriteRenderer image;
+        public Sprite[] possibleSprites;
+        public ParticleSystem explosionParticle;
+        void Awake()
         {
-            if ((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid)
-                CreateExplosionParticle(asteroid.rbd.Position);
+            image.sprite = possibleSprites[Random.Range(0, possibleSprites.Length)];
+        
         }
-    }
 
-    public void CreateExplosionParticle(Vector3 position)
-    {
-        explosionParticle.transform.position = position;
-        explosionParticle.UnparentAndPlay();
+        private void Start()
+        {
+            MyEventHandlerManager.OnEvent.AddListener(OnAsteroidDestroyed);
+        }
+
+        void OnAsteroidDestroyed(MyEventBase arg0)
+        {
+            if (arg0 is OnAsteroidDestroyedEvent)
+            {
+                if ((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid)
+                    CreateExplosionParticle(asteroid.rbd.Position);
+            }
+        }
+
+        public void CreateExplosionParticle(Vector3 position)
+        {
+            explosionParticle.transform.position = position;
+            explosionParticle.UnparentAndPlay();
+        }
     }
 }

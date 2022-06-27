@@ -1,50 +1,49 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+using Player;
 
-public class ShipManager : Singleton<ShipManager>
+namespace Ship
 {
-    public Ship[] ships;
-    private void Start()
+    public class ShipManager : Singleton<ShipManager>
     {
-        if (PlayerManager.Instance != null)
+        public global::Ship.Ship[] ships;
+        private void Start()
         {
-            for (int i = 0; i < PlayerManager.Instance.players.Count; i++)
+            if (PlayerManager.Instance != null)
             {
-                ships[i].owner = PlayerManager.Instance.players[i];
+                for (int i = 0; i < PlayerManager.Instance.players.Count; i++)
+                {
+                    ships[i].owner = PlayerManager.Instance.players[i];
+                }
             }
-        }
         
-        GameManager.OnGameRestarted.AddListener(ResetShips);
-        PlayerManager.OnChangePlayers.AddListener(ResetShips);
-        ResetShips();
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.OnGameRestarted.RemoveListener(ResetShips);
-        PlayerManager.OnChangePlayers.RemoveListener(ResetShips);
-
-    }
-
-    void ResetShips()
-    {
-        foreach (var s in ships)
-        {
-            s.Reset();
-            s.SetDefaultValues();
+            GameManager.OnGameRestarted.AddListener(ResetShips);
+            PlayerManager.OnChangePlayers.AddListener(ResetShips);
+            ResetShips();
         }
-        UpdateShips();
-    }
 
-    void UpdateShips()
-    {
-        foreach (var ship in ships)
+        private void OnDestroy()
         {
-            ship.rbd.isEnabled = ship.owner.IsConnected;
-            ship.view.UpdateShipView();
+            GameManager.OnGameRestarted.RemoveListener(ResetShips);
+            PlayerManager.OnChangePlayers.RemoveListener(ResetShips);
+
+        }
+
+        void ResetShips()
+        {
+            foreach (var s in ships)
+            {
+                s.Reset();
+                s.SetDefaultValues();
+            }
+            UpdateShips();
+        }
+
+        void UpdateShips()
+        {
+            foreach (var ship in ships)
+            {
+                ship.rbd.isEnabled = ship.owner.IsConnected;
+                ship.view.UpdateShipView();
+            }
         }
     }
 }
