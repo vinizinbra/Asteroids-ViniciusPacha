@@ -1,11 +1,12 @@
+using System;
 using System.Linq;
 using UnityEngine.Events;
 
 public class GameManager : Singleton<GameManager>
 {
-    public UnityEvent onGameStarted = new UnityEvent();
-    public UnityEvent onGameRestart = new UnityEvent();
-    public UnityEvent<GameState> onGameStateChanged = new UnityEvent<GameState>();
+    public static UnityEvent OnGameStarted = new UnityEvent();
+    public static UnityEvent OnGameRestarted = new UnityEvent();
+    public static UnityEvent<GameState> OnGameStateChanged = new UnityEvent<GameState>();
 
     public int level = 0;
     public enum GameState
@@ -18,14 +19,13 @@ public class GameManager : Singleton<GameManager>
     }
 
     private GameState _currentGameState = GameState.MENU;
-
-    private GameState CurrentGameState
+    public GameState CurrentGameState
     {
         get => _currentGameState;
         set
         {
             if(_currentGameState != value)
-                onGameStateChanged.Invoke(value);
+                OnGameStateChanged.Invoke(value);
             _currentGameState = value;
         }
     }
@@ -33,9 +33,15 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         CurrentGameState = GameState.INGAME;
-        onGameStarted.Invoke();
-        MyEventHandlerManager.Instance.onEvent.AddListener(OnAsteroidDestroyedEvent);
-        MyEventHandlerManager.Instance.onEvent.AddListener(OnShipHitEvent);
+        OnGameStarted.Invoke();
+        MyEventHandlerManager.OnEvent.AddListener(OnAsteroidDestroyedEvent);
+        MyEventHandlerManager.OnEvent.AddListener(OnShipHitEvent);
+    }
+
+    private void OnDestroy()
+    {
+        MyEventHandlerManager.OnEvent.RemoveListener(OnAsteroidDestroyedEvent);
+        MyEventHandlerManager.OnEvent.RemoveListener(OnShipHitEvent);
     }
 
     private void OnShipHitEvent(MyEventBase arg0)
@@ -51,7 +57,9 @@ public class GameManager : Singleton<GameManager>
         if (arg0 is OnAsteroidDestroyedEvent)
         {
             var asteroid = (arg0 as OnAsteroidDestroyedEvent).asteroidObject;
-            CheckWinCondition(asteroid);
+            
+            if(asteroid.data.generateAsteroids <= 0)
+                CheckWinCondition(asteroid);
         }
     }
 
@@ -70,7 +78,7 @@ public class GameManager : Singleton<GameManager>
     public void Restart()
     {
         CurrentGameState = GameState.MENU;
-        onGameRestart.Invoke();
+        OnGameRestarted.Invoke();
     }
 
     public void CheckLoseCondition()
@@ -89,8 +97,6 @@ public class GameManager : Singleton<GameManager>
     }
     public void CheckWinCondition(Asteroid asteroid)
     {
-        if (asteroid.data.generateAsteroids > 0) return;
-        
         if(!MyPhysics.objectList.Any(x=> x is Asteroid && x.rbd.isEnabled))
             Win();
     }

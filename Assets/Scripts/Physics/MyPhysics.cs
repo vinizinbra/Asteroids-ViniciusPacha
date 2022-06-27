@@ -13,15 +13,15 @@ public class MyPhysics : MonoBehaviour
     public int count;
     void Start()
     {
-        GameManager.Instance.onGameStarted.AddListener(StartSimulation);
-        GameManager.Instance.onGameRestart.AddListener(StopSimulation);
+        GameManager.OnGameStarted.AddListener(StartSimulation);
+        GameManager.OnGameRestarted.AddListener(StopSimulation);
     }
 
     private void OnDestroy()
     {
         StopSimulation();
-        GameManager.Instance.onGameStarted.RemoveListener(StartSimulation);
-        GameManager.Instance.onGameRestart.RemoveListener(StopSimulation);
+        GameManager.OnGameStarted.RemoveListener(StartSimulation);
+        GameManager.OnGameRestarted.RemoveListener(StopSimulation);
     }
 
     public static void AddBody(Entity obj)
@@ -50,8 +50,8 @@ public class MyPhysics : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        if(_physicsThread != null)
-            _physicsThread.Abort();
+        StopSimulation();
+        
     }
 
     public void StopSimulation()
@@ -96,7 +96,7 @@ public class MyPhysics : MonoBehaviour
             else if (body.Position.y > mapConfig.gameArea.y)
                 body.Position.y -= mapConfig.gameArea.y * 2;
 
-            body.Force = Vector3.zero; // reset net force at the end
+            body.Force = Vector3.zero;
             for(int j = 0; j < body.myControllers.Length;j++)
                 body.myControllers[j].MyFixedUpdate();
         }
@@ -129,6 +129,7 @@ public class MyPhysics : MonoBehaviour
             for (int j = 0; i < objectList.Count; j++)
             {
                 var objB = objectList[j];
+                
                 if (!objB.rbd.isEnabled) continue;
 
                 if (objA == objB) break;

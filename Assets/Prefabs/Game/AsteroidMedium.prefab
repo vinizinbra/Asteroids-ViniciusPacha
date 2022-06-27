@@ -4893,8 +4893,8 @@ GameObject:
   - component: {fileID: 2121950524282973838}
   - component: {fileID: 2545335787510954941}
   - component: {fileID: 1493522692551719945}
-  - component: {fileID: 4117609492935132802}
   - component: {fileID: 1043331482142509558}
+  - component: {fileID: 4117609492935132802}
   m_Layer: 0
   m_Name: AsteroidMedium
   m_TagString: Untagged
@@ -4986,10 +4986,9 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   Force: {x: 0, y: 0}
   angle: 0
-  isDestroyed: 0
   isEnabled: 1
   data: {fileID: 11400000, guid: 86bc31c5e3fe34215b8410a3b9b929ef, type: 2}
-  myComponents: []
+  myControllers: []
   onCollision:
     m_PersistentCalls:
       m_Calls: []
@@ -5035,6 +5034,19 @@ MonoBehaviour:
   ID: AsteroidMedium
   rbd: {fileID: 0}
   data: {fileID: 11400000, guid: de6be6b8260764f57872627f01229743, type: 2}
+--- !u!114 &1043331482142509558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093548478828400080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad397d35185d44658b0a762673945b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 1493522692551719945}
 --- !u!114 &4117609492935132802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5053,16 +5065,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 60b2da8987c954fbc9f222f7702439ff, type: 3}
   - {fileID: 21300000, guid: 91d83457576b24ca08de98ec94bfd0c9, type: 3}
   explosionParticle: {fileID: 6153265780876836947}
---- !u!114 &1043331482142509558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8093548478828400080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dad397d35185d44658b0a762673945b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroid: {fileID: 1493522692551719945}

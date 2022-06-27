@@ -4889,13 +4889,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8751030019907931103}
   - component: {fileID: 8751030019907931072}
-  - component: {fileID: 8751030019907931073}
   - component: {fileID: 8751030019907931099}
-  - component: {fileID: 8751030019907931100}
-  - component: {fileID: 8751030019907931101}
-  - component: {fileID: 8751030019907931102}
-  - component: {fileID: 8751030019907931098}
+  - component: {fileID: 8751030019907931073}
   - component: {fileID: 8751030019907931097}
+  - component: {fileID: 8751030019907931100}
+  - component: {fileID: 8751030019907931098}
+  - component: {fileID: 8751030019907931102}
+  - component: {fileID: 8751030019907931101}
   m_Layer: 0
   m_Name: PlayerRed
   m_TagString: Untagged
@@ -4972,6 +4972,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8751030019907931099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751030019907931074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0d31fa367e4460a55c10917bf1a27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2
 --- !u!114 &8751030019907931073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4988,15 +5001,14 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   Force: {x: 0, y: 0}
   angle: 0
-  isDestroyed: 0
   isEnabled: 1
   data: {fileID: 11400000, guid: c4c178c705fad43ce9fd56463461cbe2, type: 2}
-  myComponents: []
+  myControllers: []
   onCollision:
     m_PersistentCalls:
       m_Calls: []
   collider: {fileID: 8751030019907931099}
---- !u!114 &8751030019907931099
+--- !u!114 &8751030019907931097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5005,11 +5017,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8751030019907931074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0d31fa367e4460a55c10917bf1a27f, type: 3}
+  m_Script: {fileID: 11500000, guid: 570a194579fe5481bbb018359fffd7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: 0
-  radius: 2
+  myRigidbodyObject: {fileID: 8751030019907931073}
 --- !u!114 &8751030019907931100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5028,6 +5039,43 @@ MonoBehaviour:
     down: 0
     up: 0
     fire: 0
+--- !u!114 &8751030019907931098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751030019907931074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc3e57ebebc14a0684a2dd4f063c6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: PlayerRed
+  rbd: {fileID: 8751030019907931073}
+  owner:
+    name: 
+    IsConnected: 0
+    input: {fileID: 0}
+  collisionDelay: 0
+  currentLife: 0
+  isThrusting: 0
+  data: {fileID: 11400000, guid: c105c0528594944ea94fc28cb40ad91f, type: 2}
+  view: {fileID: 8751030019907931101}
+--- !u!114 &8751030019907931102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751030019907931074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ccdc9589ae0493889abd0b0bf84593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipEntity: {fileID: 8751030019907931098}
+  input: {fileID: 8751030019907931100}
 --- !u!114 &8751030019907931101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5044,54 +5092,6 @@ MonoBehaviour:
   sprite: {fileID: 8751030019907931072}
   propulsionFx: {fileID: 8751030020483368271}
   explosionFx: {fileID: 1185194801302840800}
---- !u!114 &8751030019907931102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751030019907931074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96ccdc9589ae0493889abd0b0bf84593, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shipEntity: {fileID: 8751030019907931098}
-  input: {fileID: 8751030019907931100}
---- !u!114 &8751030019907931098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751030019907931074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbc3e57ebebc14a0684a2dd4f063c6f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner:
-    name: 
-    IsConnected: 0
-    input: {fileID: 0}
-  collisionDelay: 0
-  rbd: {fileID: 8751030019907931073}
-  currentLife: 0
-  data: {fileID: 11400000, guid: c105c0528594944ea94fc28cb40ad91f, type: 2}
-  isThrusting: 0
---- !u!114 &8751030019907931097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751030019907931074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 570a194579fe5481bbb018359fffd7f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRigidbodyObject: {fileID: 8751030019907931073}
 --- !u!1 &8751030020483368242
 GameObject:
   m_ObjectHideFlags: 0

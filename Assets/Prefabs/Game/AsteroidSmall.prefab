@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 6085296320683255279}
   - component: {fileID: 7661510722159636700}
   - component: {fileID: 6754257016866322280}
-  - component: {fileID: 693757067}
-  - component: {fileID: 1221396300225938207}
   - component: {fileID: 6866099614492524892}
+  - component: {fileID: 693757067}
   m_Layer: 0
   m_Name: AsteroidSmall
   m_TagString: Untagged
@@ -108,10 +107,9 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   Force: {x: 0, y: 0}
   angle: 0
-  isDestroyed: 0
   isEnabled: 1
   data: {fileID: 11400000, guid: 04bdbe7503133439b9c36384af7044d4, type: 2}
-  myComponents: []
+  myControllers: []
   onCollision:
     m_PersistentCalls:
       m_Calls: []
@@ -157,6 +155,19 @@ MonoBehaviour:
   ID: AsteroidSmall
   rbd: {fileID: 0}
   data: {fileID: 11400000, guid: e3fb223a7e2b54c9db42999f83191bb3, type: 2}
+--- !u!114 &6866099614492524892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130910766725220017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad397d35185d44658b0a762673945b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 6754257016866322280}
 --- !u!114 &693757067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,33 +186,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 678dee01589d0477cb6f14d99b1abcd4, type: 3}
   - {fileID: 21300000, guid: a907ce7249f794f5e83366c2b126e81f, type: 3}
   explosionParticle: {fileID: 6802248450042984664}
---- !u!114 &1221396300225938207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4130910766725220017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10410a4d94d764e71b8da24b33e471d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isQuitting: 0
-  particle: {fileID: 6802248450042984664}
---- !u!114 &6866099614492524892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4130910766725220017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dad397d35185d44658b0a762673945b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroid: {fileID: 6754257016866322280}
 --- !u!1 &4416943196928885482
 GameObject:
   m_ObjectHideFlags: 0

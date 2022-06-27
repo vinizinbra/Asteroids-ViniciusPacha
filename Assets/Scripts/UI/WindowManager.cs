@@ -17,7 +17,12 @@ public class WindowManager : Singleton<WindowManager>
 
     private void Start()
     {
-        GameManager.Instance.onGameStateChanged.AddListener(GameStateChanged);
+        GameManager.OnGameStateChanged.AddListener(GameStateChanged);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged.RemoveListener(GameStateChanged);
     }
 
     public void GameStateChanged(GameManager.GameState currentGameState)

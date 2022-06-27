@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(MyCollider))]
 public class MyRigidbodyObject : MonoBehaviour
 {
     public Vector2 Position;

@@ -11,12 +11,12 @@ public class AsteroidManager : Singleton<AsteroidManager>
     
     void Start()
     {
-        GameManager.Instance.onGameStarted.AddListener(StartGame);
+        GameManager.OnGameStarted.AddListener(StartGame);
     }
     
     private void OnDestroy()
     {
-        GameManager.Instance.onGameStarted.RemoveListener(StartGame);
+        GameManager.OnGameStarted.RemoveListener(StartGame);
     }
 
     void StartGame()

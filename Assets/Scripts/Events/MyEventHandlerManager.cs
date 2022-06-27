@@ -6,16 +6,15 @@ using UnityEngine.Events;
 
 public class MyEventHandlerManager : Singleton<MyEventHandlerManager>
 {
-    public List<MyEventBase> myEvents = new List<MyEventBase>();
-
-    public UnityEvent<MyEventBase> onEvent = new UnityEvent<MyEventBase>();
+    public static List<MyEventBase> MyEvents = new List<MyEventBase>();
+    public static UnityEvent<MyEventBase> OnEvent = new UnityEvent<MyEventBase>();
 
     void Update()
     {
-        foreach (var e in myEvents)
+        foreach (var e in MyEvents)
         {
-            onEvent.Invoke(e);
+            OnEvent.Invoke(e);
         }
-        myEvents.Clear();
+        MyEvents.Clear();
     }
 }

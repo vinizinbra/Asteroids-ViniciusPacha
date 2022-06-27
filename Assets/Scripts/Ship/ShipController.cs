@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ShipController : Controller
@@ -9,6 +10,12 @@ public class ShipController : Controller
     {
         shipEntity.rbd.onCollision.AddListener( OnCollision );
     }
+
+    private void OnDestroy()
+    {
+        shipEntity.rbd.onCollision.RemoveListener( OnCollision );
+    }
+
     public override void MyFixedUpdate()
     {
         shipEntity.collisionDelay -= MyPhysics.FIXED_TIME_STEP;
@@ -48,7 +55,7 @@ public class ShipController : Controller
             
             OnAsteroidDestroyedEvent ev = new OnAsteroidDestroyedEvent();
             ev.asteroidObject = other as Asteroid;
-            MyEventHandlerManager.Instance.myEvents.Add(ev);
+            MyEventHandlerManager.MyEvents.Add(ev);
         }
     }
 
@@ -62,7 +69,7 @@ public class ShipController : Controller
             
             OnShipHitEvent ev = new OnShipHitEvent();
             ev.shipObject = shipEntity;
-            MyEventHandlerManager.Instance.myEvents.Add(ev);
+            MyEventHandlerManager.MyEvents.Add(ev);
         }
         
     }

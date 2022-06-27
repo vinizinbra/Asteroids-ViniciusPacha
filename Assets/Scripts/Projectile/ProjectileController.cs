@@ -6,7 +6,11 @@ public class ProjectileController : Controller
     {
         projectile.rbd.onCollision.AddListener( OnCollision );
     }
-
+    private void OnDestroy()
+    {
+        projectile.rbd.onCollision.RemoveListener(OnCollision);
+    }
+    
     public override void MyFixedUpdate()
     {
         base.MyFixedUpdate();
@@ -17,10 +21,7 @@ public class ProjectileController : Controller
         }
     }
 
-    private void OnDestroy()
-    {
-        projectile.rbd.onCollision.RemoveListener(OnCollision);
-    }
+   
 
     private void OnCollision(Entity other)
     {
@@ -32,7 +33,7 @@ public class ProjectileController : Controller
 
             OnAsteroidDestroyedEvent e = new OnAsteroidDestroyedEvent();
             e.asteroidObject = other as Asteroid;
-            MyEventHandlerManager.Instance.myEvents.Add(e);
+            MyEventHandlerManager.MyEvents.Add(e);
         }
     }
 

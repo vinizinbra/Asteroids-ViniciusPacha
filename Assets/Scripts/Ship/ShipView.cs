@@ -15,7 +15,7 @@ public class ShipView : MonoBehaviour
 
     void Start()
     {
-        MyEventHandlerManager.Instance.onEvent.AddListener(OnShipHit);
+        MyEventHandlerManager.OnEvent.AddListener(OnShipHit);
 
     }
 

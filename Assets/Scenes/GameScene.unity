@@ -278,7 +278,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6578327801960827905, guid: 71be8ee2fb9e143058633fc9a8771504, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6578327801960827905, guid: 71be8ee2fb9e143058633fc9a8771504, type: 3}
       propertyPath: m_LocalPosition.x
@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6578327801960827907, guid: 71be8ee2fb9e143058633fc9a8771504, type: 3}
       propertyPath: m_Name
-      value: MyEventHandlerManager
+      value: MyEventHandler
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71be8ee2fb9e143058633fc9a8771504, type: 3}
@@ -626,8 +626,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2069919540}
   - {fileID: 2035976736}
+  - {fileID: 2069919540}
   - {fileID: 1111170026}
   - {fileID: 1782155011}
   m_Father: {fileID: 0}
@@ -708,15 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece1ce7b821664e81bf2ecfa49b03e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onGameStarted:
-    m_PersistentCalls:
-      m_Calls: []
-  onGameRestart:
-    m_PersistentCalls:
-      m_Calls: []
-  onGameStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
   level: 0
 --- !u!4 &1782155011 stripped
 Transform:
@@ -877,7 +868,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5225482727336795844, guid: 304d929c070204ce5806c07b2268f27f, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5225482727336795844, guid: 304d929c070204ce5806c07b2268f27f, type: 3}
       propertyPath: m_LocalPosition.x

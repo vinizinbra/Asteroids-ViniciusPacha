@@ -3,6 +3,7 @@ using System.Resources;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(MyRigidbodyObject))]
 public class Entity : MonoBehaviour
 {
     public string ID;

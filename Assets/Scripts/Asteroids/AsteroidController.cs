@@ -13,7 +13,7 @@ public class AsteroidController : Controller
 
     private void Start()
     {
-        MyEventHandlerManager.Instance.onEvent.AddListener(OnAsteroidDestroyed);
+        MyEventHandlerManager.OnEvent.AddListener(OnAsteroidDestroyed);
     }
 
     void OnAsteroidDestroyed(MyEventBase arg0)

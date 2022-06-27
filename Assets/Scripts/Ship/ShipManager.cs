@@ -17,9 +17,16 @@ public class ShipManager : Singleton<ShipManager>
             }
         }
         
-        GameManager.Instance.onGameRestart.AddListener(ResetShips);
-        PlayerManager.Instance.onChangePlayers.AddListener(ResetShips);
+        GameManager.OnGameRestarted.AddListener(ResetShips);
+        PlayerManager.OnChangePlayers.AddListener(ResetShips);
         ResetShips();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameRestarted.RemoveListener(ResetShips);
+        PlayerManager.OnChangePlayers.RemoveListener(ResetShips);
+
     }
 
     void ResetShips()

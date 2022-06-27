@@ -22,7 +22,6 @@ public class InGameWindow : UiWindow
 
     public void GameOver()
     {
-		UiWindow.Show<GameOverWindow>();
 		GameManager.Instance.GameOver();
     }
 

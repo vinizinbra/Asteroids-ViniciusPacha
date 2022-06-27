@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2891098815098668211}
   - component: {fileID: 6359890604319404990}
   - component: {fileID: 3025254557244629677}
-  - component: {fileID: 704989519531438655}
-  - component: {fileID: -409997328517884506}
   - component: {fileID: -5194665154608781556}
+  - component: {fileID: 704989519531438655}
   - component: {fileID: -8629399999170000703}
+  - component: {fileID: -409997328517884506}
   m_Layer: 0
   m_Name: ProjectileBlue
   m_TagString: Untagged
@@ -105,41 +105,13 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0}
   Force: {x: 0, y: 0}
   angle: 0
-  isDestroyed: 0
   isEnabled: 1
   data: {fileID: 11400000, guid: 193da934633f341efbdd53ed7d3f1127, type: 2}
-  myComponents: []
+  myControllers: []
   onCollision:
     m_PersistentCalls:
       m_Calls: []
   collider: {fileID: 704989519531438655}
---- !u!114 &704989519531438655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7271063299199078753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0d31fa367e4460a55c10917bf1a27f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tag: 2
-  radius: 0.5
---- !u!114 &-409997328517884506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7271063299199078753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06137f49815f496486a3af45e7b4f657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: -8629399999170000703}
 --- !u!114 &-5194665154608781556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +125,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbodyObject: {fileID: 3025254557244629677}
+--- !u!114 &704989519531438655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271063299199078753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0d31fa367e4460a55c10917bf1a27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.5
 --- !u!114 &-8629399999170000703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +154,16 @@ MonoBehaviour:
   rbd: {fileID: 3025254557244629677}
   currentDistance: 0
   data: {fileID: 11400000, guid: d7d756c5d15434590952bfca95df3a65, type: 2}
+--- !u!114 &-409997328517884506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271063299199078753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06137f49815f496486a3af45e7b4f657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: -8629399999170000703}
