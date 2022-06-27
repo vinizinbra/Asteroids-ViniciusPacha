@@ -40,8 +40,6 @@ public class MyPhysics : MonoBehaviour
     
     void PhysicsLoop()
     {
-        count = objectList.Count;
-        int frame = 0;
         while (true)
         {
             float step = FIXED_TIME_STEP * 1;

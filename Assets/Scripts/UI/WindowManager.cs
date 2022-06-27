@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindowManager : MonoBehaviour
+public class WindowManager : Singleton<WindowManager>
 {
-    public static WindowManager instance; 
-    public UiWindow[] uiWindows; 
-    void Awake()
+    public UiWindow[] uiWindows;
+
+    protected override void Awake()
     {
-        instance = this;
+        base.Awake();
+        
         uiWindows = GetComponentsInChildren<UiWindow>(true);
         UiWindow.Show<MenuWindow>();
     }

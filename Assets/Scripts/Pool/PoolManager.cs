@@ -13,8 +13,6 @@ public class PoolManager : Singleton<PoolManager>
     protected override void Awake()
     {
         base.Awake();
-        Debug.Log("aaa");
-        Debug.Log(Instance.ToString());
         foreach (var prefab in data.prefabs)
         {
             Pool p = gameObject.AddComponent<Pool>();

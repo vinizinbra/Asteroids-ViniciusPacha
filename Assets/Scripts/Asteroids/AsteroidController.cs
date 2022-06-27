@@ -20,11 +20,8 @@ public class AsteroidController : Controller
     {
         if (arg0 is OnAsteroidDestroyedEvent)
         {
-            Debug.Log("on asteroid destroyed");
-
             if ((arg0 as OnAsteroidDestroyedEvent).asteroidObject == asteroid)
             {
-                Debug.Log("try create asteroids");
                 TryToCreateAsteroids();
             }
         }

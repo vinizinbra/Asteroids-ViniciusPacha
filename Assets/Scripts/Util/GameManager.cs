@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class GameManager : Singleton<GameManager>
 {
     public UnityEvent onGameStarted = new UnityEvent();
-    public UnityEvent onGameOver = new UnityEvent();
     public UnityEvent onGameRestart = new UnityEvent();
     public UnityEvent<GameState> onGameStateChanged = new UnityEvent<GameState>();
 
@@ -60,7 +59,6 @@ public class GameManager : Singleton<GameManager>
     {
         level = 0;
         CurrentGameState = GameState.GAMEOVER;
-        onGameOver.Invoke();
     }
     public void Win()
     {
@@ -68,7 +66,6 @@ public class GameManager : Singleton<GameManager>
         
         level++;
         CurrentGameState = GameState.WIN;
-        onGameOver.Invoke();
     }
     public void Restart()
     {

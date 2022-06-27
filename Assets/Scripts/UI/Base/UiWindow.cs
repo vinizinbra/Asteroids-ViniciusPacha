@@ -22,7 +22,7 @@ public class UiWindow : MonoBehaviour {
     
     public static void Show<T>() where T : UiWindow
     {
-        var allScreens = WindowManager.instance.uiWindows;
+        var allScreens = WindowManager.Instance.uiWindows;
 
         bool exists = Enumerable.Any(allScreens, s => s is T);
 
@@ -43,7 +43,7 @@ public class UiWindow : MonoBehaviour {
     
     public static UiWindow Get<T>() where T : UiWindow
     {
-        var allScreens = WindowManager.instance.uiWindows;
+        var allScreens = WindowManager.Instance.uiWindows;
 
         foreach (var window in allScreens)
         {
