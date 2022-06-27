@@ -8,5 +8,5 @@ public class GameConfigData : ScriptableObject
     public float distanceFromPlayer;
     public float asteroidForce;
     public int startAsteroids;
-
+    public Asteroid[] asteroidPrefabs;
 }

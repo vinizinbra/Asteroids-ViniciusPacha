@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SystemBase : MonoBehaviour
+public class Controller : MonoBehaviour
 {
     private bool _isQuitting;
 

@@ -1,4 +1,4 @@
-public class ProjectileController : SystemBase
+public class ProjectileController : Controller
 {
     public Projectile projectile;
     

@@ -1,16 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ShipManager : MonoBehaviour
+public class ShipManager : Singleton<ShipManager>
 {
     public Ship[] ships;
-    public static ShipManager Instance;
-    public DebugPlayer debugPlayer;
-    
-    public UnityEvent onGetHit = new UnityEvent();
-    void Awake()
+    private void Start()
     {
         if (PlayerManager.Instance != null)
         {
@@ -19,15 +16,28 @@ public class ShipManager : MonoBehaviour
                 ships[i].owner = PlayerManager.Instance.players[i];
             }
         }
-        else
-        {
-            for (int i = 0; i < debugPlayer.players.Length; i++)
-            {
-                ships[i].owner = debugPlayer.players[i];
-            }
-        }
-        Instance = this;
         
+        GameManager.Instance.onGameRestart.AddListener(ResetShips);
+        PlayerManager.Instance.onChangePlayers.AddListener(ResetShips);
+        ResetShips();
     }
 
+    void ResetShips()
+    {
+        foreach (var s in ships)
+        {
+            s.Reset();
+            s.SetDefaultValues();
+        }
+        UpdateShips();
+    }
+
+    void UpdateShips()
+    {
+        foreach (var ship in ships)
+        {
+            ship.rbd.isEnabled = ship.owner.IsConnected;
+            ship.view.UpdateShipView();
+        }
+    }
 }

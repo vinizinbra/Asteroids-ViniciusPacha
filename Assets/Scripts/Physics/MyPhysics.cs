@@ -1,21 +1,12 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class MyPhysics : MonoBehaviour
 {
-    public const float MAX_DELTA = 0.3f;
     public const float FIXED_TIME_STEP = 0.02f;
-    private float currentTime;
-    private float accumulator;
+    private float _currentTime;
     public MapData mapConfig;
-    public GameConfigData gameConfig;
     private Thread _physicsThread;
     
     public static List<Entity> objectList = new List<Entity>();
@@ -23,13 +14,14 @@ public class MyPhysics : MonoBehaviour
     void Start()
     {
         GameManager.Instance.onGameStarted.AddListener(StartSimulation);
+        GameManager.Instance.onGameRestart.AddListener(StopSimulation);
     }
 
     private void OnDestroy()
     {
         StopSimulation();
         GameManager.Instance.onGameStarted.RemoveListener(StartSimulation);
-
+        GameManager.Instance.onGameRestart.RemoveListener(StopSimulation);
     }
 
     public static void AddBody(Entity obj)
@@ -45,40 +37,16 @@ public class MyPhysics : MonoBehaviour
     {
         count = objectList.Count;
     }
-
+    
     void PhysicsLoop()
     {
         count = objectList.Count;
-        float realtimeSinceStartup = 0;
+        int frame = 0;
         while (true)
         {
-            float newTime = realtimeSinceStartup;
-            float frameTime = newTime - currentTime;
-
-            if (frameTime > MAX_DELTA) frameTime = MAX_DELTA;
-            currentTime = newTime;
-
-            accumulator += frameTime * 1;
-
-            // Fixed update loop - note it can run multiple times per frame
-            while (accumulator >= FIXED_TIME_STEP * 1)
-            {
-                float step = FIXED_TIME_STEP * 1;
-                Step(step);
-                accumulator -= step;
-            }
-
-            /*
-            float alpha = accumulator / (FIXED_TIME_STEP * 1);
-        
-            foreach(var body in objectList)
-            {
-                body.Interpolate(alpha);
-            }
-            */
+            float step = FIXED_TIME_STEP * 1;
+            Step(step);
             Thread.Sleep((int)(FIXED_TIME_STEP * 1000));
-            realtimeSinceStartup += FIXED_TIME_STEP;
-            
         }
     }
 
@@ -102,8 +70,10 @@ public class MyPhysics : MonoBehaviour
     }
     public void StartSimulation()
     {
+        _currentTime = 0;
         _physicsThread = new Thread( PhysicsLoop);
         _physicsThread.Start();
+        
     }
     
     public void Step(float dt)
@@ -129,8 +99,8 @@ public class MyPhysics : MonoBehaviour
                 body.Position.y -= mapConfig.gameArea.y * 2;
 
             body.Force = Vector3.zero; // reset net force at the end
-            for(int j = 0; j < body.mySystems.Count;j++)
-                body.mySystems[j].MyFixedUpdate();
+            for(int j = 0; j < body.myControllers.Length;j++)
+                body.myControllers[j].MyFixedUpdate();
         }
 
         ResolveCollisions();

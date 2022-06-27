@@ -1,16 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
-using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
-public class GameManager : Manager<GameManager>
+public class GameManager : Singleton<GameManager>
 {
     public UnityEvent onGameStarted = new UnityEvent();
     public UnityEvent onGameOver = new UnityEvent();
+    public UnityEvent onGameRestart = new UnityEvent();
+    public UnityEvent<GameState> onGameStateChanged = new UnityEvent<GameState>();
 
     public int level = 0;
     public enum GameState
@@ -22,24 +18,33 @@ public class GameManager : Manager<GameManager>
         
     }
 
-    public GameState currentGameState = GameState.MENU;
+    private GameState _currentGameState = GameState.MENU;
+
+    private GameState CurrentGameState
+    {
+        get => _currentGameState;
+        set
+        {
+            if(_currentGameState != value)
+                onGameStateChanged.Invoke(value);
+            _currentGameState = value;
+        }
+    }
 
     public void StartGame()
     {
-        currentGameState = GameState.INGAME;
+        CurrentGameState = GameState.INGAME;
         onGameStarted.Invoke();
-        ShipManager.Instance.onGetHit.AddListener(CheckLoseCondition);
         MyEventHandlerManager.Instance.onEvent.AddListener(OnAsteroidDestroyedEvent);
-        MyEventHandlerManager.Instance.onEvent.AddListener(OnShipDestroyedEvent);
+        MyEventHandlerManager.Instance.onEvent.AddListener(OnShipHitEvent);
     }
 
-    private void OnShipDestroyedEvent(MyEventBase arg0)
+    private void OnShipHitEvent(MyEventBase arg0)
     {
-        if (arg0 is OnShipDestroyedEvent)
+        if (arg0 is OnShipHitEvent)
         {
-            Debug.Log("OnShipDestroyedEvent");
             CheckLoseCondition();
-        }    
+        }
     }
 
     private void OnAsteroidDestroyedEvent(MyEventBase arg0)
@@ -54,21 +59,21 @@ public class GameManager : Manager<GameManager>
     public void GameOver()
     {
         level = 0;
-        currentGameState = GameState.GAMEOVER;
+        CurrentGameState = GameState.GAMEOVER;
         onGameOver.Invoke();
     }
     public void Win()
     {
-        if (currentGameState == GameState.WIN) return;
+        if (_currentGameState == GameState.WIN) return;
         
         level++;
-        currentGameState = GameState.WIN;
+        CurrentGameState = GameState.WIN;
         onGameOver.Invoke();
     }
     public void Restart()
     {
-        currentGameState = GameState.MENU;
-        SceneManager.LoadScene("GameScene");
+        CurrentGameState = GameState.MENU;
+        onGameRestart.Invoke();
     }
 
     public void CheckLoseCondition()
@@ -89,7 +94,6 @@ public class GameManager : Manager<GameManager>
     {
         if (asteroid.data.generateAsteroids > 0) return;
         
-        Debug.Log("OBJ IN LIST => "+MyPhysics.objectList.Count);
         if(!MyPhysics.objectList.Any(x=> x is Asteroid && x.rbd.isEnabled))
             Win();
     }

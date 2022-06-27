@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShipController : SystemBase
+public class ShipController : Controller
 {
     public Ship shipEntity;
     public MyPlayerInput input;
@@ -55,13 +55,12 @@ public class ShipController : SystemBase
     public void GetHit()
     {
         shipEntity.currentLife -= 1;
-        ShipManager.Instance.onGetHit.Invoke();
         shipEntity.collisionDelay = shipEntity.data.collisionDelay;
         if (shipEntity.currentLife <= 0)
         {
             shipEntity.rbd.isEnabled = false;
             
-            OnShipDestroyedEvent ev = new OnShipDestroyedEvent();
+            OnShipHitEvent ev = new OnShipHitEvent();
             ev.shipObject = shipEntity;
             MyEventHandlerManager.Instance.myEvents.Add(ev);
         }

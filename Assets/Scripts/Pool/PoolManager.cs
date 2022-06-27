@@ -4,27 +4,19 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-
-public class PoolManager : MonoBehaviour
+public class PoolManager : Singleton<PoolManager>
 {
     public Dictionary<string,Pool> poolDictionary = new Dictionary<string, Pool>();
 
     public PoolData data;
 
-    public static PoolManager Instance;
-    private void Awake()
+    protected override void Awake()
     {
-        if (PoolManager.Instance != null)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(this);
-        Instance = this;
+        base.Awake();
+        Debug.Log("aaa");
+        Debug.Log(Instance.ToString());
         foreach (var prefab in data.prefabs)
         {
-            
             Pool p = gameObject.AddComponent<Pool>();
             p.initQuantity = data.initValue;
             p.InitPool(prefab);

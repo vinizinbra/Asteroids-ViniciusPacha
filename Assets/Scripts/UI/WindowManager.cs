@@ -14,9 +14,14 @@ public class WindowManager : MonoBehaviour
         UiWindow.Show<MenuWindow>();
     }
 
-    private void Update()
+    private void Start()
     {
-        switch(GameManager.Instance.currentGameState)
+        GameManager.Instance.onGameStateChanged.AddListener(GameStateChanged);
+    }
+
+    public void GameStateChanged(GameManager.GameState currentGameState)
+    {
+        switch(currentGameState)
         {
             case GameManager.GameState.MENU:
                 UiWindow.Show<MenuWindow>();

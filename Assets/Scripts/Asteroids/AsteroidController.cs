@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 
-public class AsteroidController : SystemBase
+public class AsteroidController : Controller
 {
     public Asteroid asteroid;
 

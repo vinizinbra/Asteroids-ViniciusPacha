@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-public class Manager<T> : MonoBehaviour where T: Component
+public class Singleton<T> : MonoBehaviour where T: Component
 {
     private static T _instance;
 
@@ -21,14 +21,12 @@ public class Manager<T> : MonoBehaviour where T: Component
                     newGo.name = typeof(T).ToString();
                     _instance = newGo.AddComponent<T>();
                     DontDestroyOnLoad(_instance);
-
                 }
             }
-
             return _instance;
         }
     }
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         _instance = this as T;
     }

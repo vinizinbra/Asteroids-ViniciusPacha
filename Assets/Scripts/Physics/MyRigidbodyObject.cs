@@ -14,7 +14,7 @@ public class MyRigidbodyObject : MonoBehaviour
     public float angle;
     public bool isEnabled = true;
     public MyRigidbodyData data;
-    [FormerlySerializedAs("myComponents")] public List<SystemBase> mySystems = new List<SystemBase>();
+    public Controller[] myControllers;
     public UnityEvent<Entity> onCollision = new UnityEvent<Entity>();
     
     public void AddForce(Vector2 direction, float force, bool impulse = false)
@@ -34,10 +34,6 @@ public class MyRigidbodyObject : MonoBehaviour
     void Awake()
     {
         Init();
-        mySystems = GetComponents<SystemBase>().ToList();
-    }
-    public void Interpolate(float t)
-    {
-       //transform.position += new Vector3(Velocity.x,Velocity.y,0) * t;
+        myControllers = GetComponents<Controller>();
     }
 }

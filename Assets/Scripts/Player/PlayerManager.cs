@@ -5,17 +5,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
-    public static PlayerManager Instance;
     public List<Player> players;
     [HideInInspector]
     public UnityEvent onChangePlayers = new UnityEvent();
-    private void Awake()
-    {
-        Instance = this;
-        
-        DontDestroyOnLoad(this);
-    }
+    
 
 }

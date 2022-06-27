@@ -4,25 +4,16 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
-public class AsteroidManager : MonoBehaviour
+public class AsteroidManager : Singleton<AsteroidManager>
 {
-    public int asteroidIdCounter = 0;
-    public Asteroid[] asteroidPrefabs;
-    public static AsteroidManager Instance;
     public MapData mapData;
     public GameConfigData gameConfigData;
-    private void Awake()
-    {
-        Instance = this;
-    }
-
+    
     void Start()
     {
         GameManager.Instance.onGameStarted.AddListener(StartGame);
     }
-
     
-
     private void OnDestroy()
     {
         GameManager.Instance.onGameStarted.RemoveListener(StartGame);
@@ -33,7 +24,7 @@ public class AsteroidManager : MonoBehaviour
         for (int i = 0; i < gameConfigData.startAsteroids + GameManager.Instance.level; i++)
         {
             var randomPosition = GenerateRandomPosition();
-            var a = CreateAsteroid(asteroidPrefabs.Length-1,randomPosition);
+            var a = CreateAsteroid(gameConfigData.asteroidPrefabs.Length-1,randomPosition);
             var dir = SetFirstDirection(randomPosition.ToVector3());
             a.SetDirection(dir);
         }
@@ -59,9 +50,7 @@ public class AsteroidManager : MonoBehaviour
     }
     public Asteroid CreateAsteroid(int index, Vector2 position)
     {
-        asteroidIdCounter++;
-        var go = PoolManager.Instance.CreateObjectFromPool(asteroidPrefabs[index],position,0);
-        go.name += string.Format("ID {0}", asteroidIdCounter);
+        var go = PoolManager.Instance.CreateObjectFromPool(gameConfigData.asteroidPrefabs[index],position,0);
         return go as Asteroid;
     }
 

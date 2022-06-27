@@ -10,12 +10,14 @@ public class Ship : Entity
     public Player owner;
     public float collisionDelay = 0;
     public int currentLife;
-    public ShipData data;
     public bool isThrusting;
     
     private Vector2 _startPosition;
     private float _startAngle;
+    
+    public ShipData data;
 
+    public ShipView view;
     private void Start()
     {
         _startPosition = rbd.Position;
@@ -28,6 +30,7 @@ public class Ship : Entity
         rbd.Position = _startPosition;
         rbd.angle = _startAngle;
         currentLife = data.maxLife;
+        collisionDelay = 0;
     }
     
 }

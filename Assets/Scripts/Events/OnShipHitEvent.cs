@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnShipDestroyedEvent : MyEventBase
+public class OnShipHitEvent : MyEventBase
 {
     public Entity shipObject;
 }

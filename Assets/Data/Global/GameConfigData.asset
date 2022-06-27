@@ -15,3 +15,7 @@ MonoBehaviour:
   distanceFromPlayer: 50
   asteroidForce: 20
   startAsteroids: 2
+  asteroidPrefabs:
+  - {fileID: 6754257016866322280, guid: 3204acff15e1740df9fc89f6afff0cda, type: 3}
+  - {fileID: 1493522692551719945, guid: 85a98ef6a11e646df9030db7c3f492c5, type: 3}
+  - {fileID: 3451482301839657660, guid: 40a087be557354ff6846682bbc85597f, type: 3}

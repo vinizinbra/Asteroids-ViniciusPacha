@@ -30,6 +30,8 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
+      <Path>AsteroidTest.app</Path>
+      <Path>AsteroidTest_BurstDebugInformation_DoNotShip</Path>
       <Path>Logs</Path>
       <Path>Recordings</Path>
       <Path>Temp</Path>

@@ -40,11 +40,7 @@ public class MenuWindow : UiWindow
 				    _playerManager.onChangePlayers.Invoke();
 			    }
 		    }
-
-		    foreach (var ship in ShipManager.Instance.ships)
-		    {
-			    ship.rbd.isEnabled = ship.owner.IsConnected;
-		    }
 	    }
     }
+    
 }

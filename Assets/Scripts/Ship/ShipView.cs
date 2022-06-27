@@ -15,26 +15,30 @@ public class ShipView : MonoBehaviour
 
     void Start()
     {
-        if(PlayerManager.Instance != null)
-            PlayerManager.Instance.onChangePlayers.AddListener(UpdateShipView);
-        MyEventHandlerManager.Instance.onEvent.AddListener(OnShipDestroyed);
+        MyEventHandlerManager.Instance.onEvent.AddListener(OnShipHit);
 
     }
 
-    private void OnShipDestroyed(MyEventBase ev)
+    private void OnShipHit(MyEventBase ev)
     {
-        if (ev is OnShipDestroyedEvent)
+        if (ev is OnShipHitEvent)
         {
-            if ((ev as OnShipDestroyedEvent).shipObject == ship.rbd)
-                DeathFx();
+            var ship = (ev as OnShipHitEvent).shipObject as Ship;
+            if (ship == this.ship)
+            {
+                if(ship.currentLife <= 0)
+                    DeathFx();
+            }
         }
     }
 
     private void DeathFx()
     {
+        UpdateShipView();
+        explosionFx.transform.position = transform.position;
         explosionFx.UnparentAndPlay();
     }
-    void UpdateShipView()
+    public void UpdateShipView()
     {
         gameObject.SetActive(ship.currentLife > 0 && ship.owner.IsConnected);
     }
@@ -49,13 +53,5 @@ public class ShipView : MonoBehaviour
         {
             propulsionFx.Stop();
         }
-
-        UpdateShipView();
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, ship.data.projectilePrefab.data.maxDistance);
     }
 }

@@ -25,7 +25,7 @@
             <e p="MyEventBase.cs" t="Include" />
             <e p="MyEventHandlerManager.cs" t="Include" />
             <e p="OnAsteroidDestroyedEvent.cs" t="Include" />
-            <e p="OnShipDestroyedEvent.cs" t="Include" />
+            <e p="OnShipHitEvent.cs" t="Include" />
           </e>
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
@@ -35,13 +35,13 @@
           </e>
           <e p="Physics" t="Include">
             <e p="CollisionEvent.cs" t="Include" />
+            <e p="Controller.cs" t="Include" />
             <e p="Entity.cs" t="Include" />
             <e p="MyCollider.cs" t="Include" />
             <e p="MyCollision.cs" t="Include" />
             <e p="MyPhysics.cs" t="Include" />
             <e p="MyRigidbodyData.cs" t="Include" />
             <e p="MyRigidbodyObject.cs" t="Include" />
-            <e p="SystemBase.cs" t="Include" />
             <e p="UpdateRigidbodyView.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
@@ -86,7 +86,7 @@
           <e p="Util" t="Include">
             <e p="Bootstrap.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
-            <e p="Manager.cs" t="Include" />
+            <e p="Singleton.cs" t="Include" />
           </e>
         </e>
         <e p="spaceshooter" t="Include">

@@ -4,25 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MyEventHandlerManager : MonoBehaviour
+public class MyEventHandlerManager : Singleton<MyEventHandlerManager>
 {
     public List<MyEventBase> myEvents = new List<MyEventBase>();
 
     public UnityEvent<MyEventBase> onEvent = new UnityEvent<MyEventBase>();
-
-    public static MyEventHandlerManager Instance;
-    private void Awake()
-    {
-        if (MyEventHandlerManager.Instance != null)
-        {
-            Destroy(this.gameObject);
-            return;
-        }        
-        
-        DontDestroyOnLoad(this);
-        Instance = this;
-        
-    }
 
     void Update()
     {
