@@ -1,3 +1,6 @@
+using UI.Windows;
+using UnityEngine.Serialization;
+
 namespace Player
 {
     [System.Serializable]
@@ -5,7 +8,8 @@ namespace Player
     {
         public string name;
         public bool IsConnected;
-        public PlayerInputMappingData input;
+        public MyPlayerInput input = new MyPlayerInput();
+        public PlayerInputMappingData inputData;
     
     }
 }

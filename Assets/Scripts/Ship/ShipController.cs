@@ -11,7 +11,6 @@ namespace Ship
     public class ShipController : Controller
     {
         public Ship shipEntity;
-        public MyPlayerInput input;
 
         private void Awake()
         {
@@ -27,9 +26,9 @@ namespace Ship
         {
             shipEntity.collisionDelay -= MyPhysics.FIXED_TIME_STEP;
         
-            if (input.myInput.right)
+            if (shipEntity.owner.input.right)
                 shipEntity.rbd.angle -= shipEntity.data.rotationSpeed*MyPhysics.FIXED_TIME_STEP;
-            if (input.myInput.left)
+            if (shipEntity.owner.input.left)
                 shipEntity.rbd.angle += shipEntity.data.rotationSpeed*MyPhysics.FIXED_TIME_STEP;
         
             if (shipEntity.isThrusting)
@@ -38,9 +37,9 @@ namespace Ship
 
         private void Update()
         {
-            shipEntity.isThrusting = input.myInput.up;
+            shipEntity.isThrusting = shipEntity.owner.input.up;
         
-            if (input.myInput.fire)
+            if (shipEntity.owner.input.fire)
                 CreateProjectile();
         }
 

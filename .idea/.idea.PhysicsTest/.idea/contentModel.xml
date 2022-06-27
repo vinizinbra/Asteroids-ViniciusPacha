@@ -32,9 +32,6 @@
           <e p="Extensions" t="Include">
             <e p="Extensions.cs" t="Include" />
           </e>
-          <e p="Feedback" t="Include">
-            <e p="PlayParticleOnDestroy.cs" t="Include" />
-          </e>
           <e p="Global" t="Include">
             <e p="GameConfigData.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />

@@ -5092,6 +5092,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7783440468301161978, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
+      propertyPath: players.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783440468301161978, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
+      propertyPath: players.Array.data[1].name
+      value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783440468301161978, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
+      propertyPath: players.Array.data[2].name
+      value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783440468301161978, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
+      propertyPath: players.Array.data[0].inputData
+      value: 
+      objectReference: {fileID: 11400000, guid: 92436a975aa36455cb83236f3ad22afe, type: 2}
+    - target: {fileID: 7783440468301161978, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
+      propertyPath: players.Array.data[1].inputData
+      value: 
+      objectReference: {fileID: 11400000, guid: 32acd5cdfeb784a62a2d6e31a92b03dc, type: 2}
+    - target: {fileID: 7783440468301161978, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
+      propertyPath: players.Array.data[2].inputData
+      value: 
+      objectReference: {fileID: 11400000, guid: 32acd5cdfeb784a62a2d6e31a92b03dc, type: 2}
+    - target: {fileID: 7783440468301161978, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
+      propertyPath: players.Array.data[0].IsConnected
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
 --- !u!4 &1111170026 stripped
@@ -5902,7 +5930,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShipManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 736483626063937627, guid: 7085a2120074b4e2ca164632ddd25180, type: 3}
+    - {fileID: 736483626832102802, guid: 7085a2120074b4e2ca164632ddd25180, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7085a2120074b4e2ca164632ddd25180, type: 3}
 --- !u!1001 &8377977756944473930
 PrefabInstance:

@@ -16,19 +16,35 @@ namespace Player
             {
                 foreach (var player in players)
                 {
-                    if (Input.GetKeyDown(player.input.thrust))
+                    if (Input.GetKeyDown(player.inputData.thrust))
                     {
                         player.IsConnected = true;
                         OnChangePlayers.Invoke();
                     }
-                    if (Input.GetKeyDown(player.input.down))
+                    if (Input.GetKeyDown(player.inputData.down))
                     {
                         player.IsConnected = false;
                         OnChangePlayers.Invoke();
                     }
                 }
             }
+
+            HandleInputs();
         }
-    
+        void HandleInputs(){
+            foreach (var player in players)
+            {
+                if (player.IsConnected)
+                {
+                    player.input.right = Input.GetKey(player.inputData.right);
+                    player.input.left = Input.GetKey(player.inputData.left);
+                    player.input.up = Input.GetKey(player.inputData.thrust);
+                    player.input.down = Input.GetKey(player.inputData.down);
+                    player.input.fire = Input.GetKeyDown(player.inputData.fire);
+                }
+            }
+
+        }
     }
+    
 }
