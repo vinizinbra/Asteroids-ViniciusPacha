@@ -38,7 +38,7 @@ namespace Ship
         }
         public void UpdateShipView()
         {
-            gameObject.SetActive(ship.currentLife > 0 && ship.owner.IsConnected);
+            gameObject.SetActive(ship.currentLife > 0 && ship.owner.isConnected);
         }
         private void Update()
         {

@@ -90,7 +90,7 @@ public class GameManager : Singleton<GameManager>
         int totalLives = 0;
         foreach (var ship in ShipManager.Instance.ships)
         {
-            if(ship.owner.IsConnected)
+            if(ship.owner.isConnected)
                 totalLives += ship.currentLife;
         }
 

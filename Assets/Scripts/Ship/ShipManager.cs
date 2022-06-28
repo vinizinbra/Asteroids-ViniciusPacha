@@ -41,7 +41,7 @@ namespace Ship
         {
             foreach (var ship in ships)
             {
-                ship.rbd.isEnabled = ship.owner.IsConnected;
+                ship.rbd.isEnabled = ship.owner.isConnected;
                 ship.view.UpdateShipView();
             }
         }

@@ -23,69 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61cff8f4-ceac-4c23-9bcb-bd212eb012f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhysicsTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidBig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidBig.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidMedium.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidMedium.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidSmall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/AsteroidSmall.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/PlayerBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/PlayerBlue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Game/PlayerRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Game/PlayerRed.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MyPlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MyPlayerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/Bonus.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/Bonus/kenvector_future SDF.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/Bonus/kenvector_future SDF.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/Bonus/kenvector_future.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/Bonus/kenvector_future.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/Bonus/kenvector_future_thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/Bonus/kenvector_future_thin.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserBlue04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserBlue04.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserBlue08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserBlue08.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserBlue14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserBlue14.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserGreen08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserGreen08.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserGreen14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserGreen14.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserRed04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserRed04.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserRed08.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserRed08.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserRed14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Lasers/laserRed14.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_big1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_big1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_big2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_big2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_big3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_big3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_big4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_big4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_med1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_med1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_med3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_med3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_small1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_small1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_small2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_small2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_tiny1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_tiny1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_tiny2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/Meteors/meteorBrown_tiny2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/playerShip3_blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/playerShip3_blue.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/playerShip3_red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/PNG/playerShip3_red.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/spaceshooter/license.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Global/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Global/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ship/ShipManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ship/ShipManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ship/ShipView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ship/ShipView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/InGameWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Windows/InGameWindow.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,10 +103,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Global/MapData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Extensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ship/ShipController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/MyPlayerInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Asteroids/AsteroidView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       </list>
     </option>
   </component>
@@ -218,7 +161,7 @@
       <workItem from="1656094004216" duration="11300000" />
       <workItem from="1656327151169" duration="8071000" />
       <workItem from="1656347854456" duration="3831000" />
-      <workItem from="1656359451827" duration="2572000" />
+      <workItem from="1656359451827" duration="3202000" />
     </task>
     <servers />
   </component>
@@ -257,10 +200,10 @@
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="441" y="285" width="936" height="490" key="find.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656359747456" />
-    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1656403306305">
+    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1656403988679">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="-1321" y="256" width="720" height="709" key="search.everywhere.popup/-1920.25.1920.1055/0.25.1792.1010@-1920.25.1920.1055" timestamp="1656348289388" />
-    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656403306305" />
+    <state x="559" y="246" width="672" height="678" key="search.everywhere.popup/-1920.25.1920.1055/0.25.1792.1010@0.25.1792.1010" timestamp="1656403988679" />
   </component>
 </project>

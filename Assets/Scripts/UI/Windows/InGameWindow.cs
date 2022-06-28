@@ -31,9 +31,9 @@ namespace UI.Windows
 		{
 			for (int i = 0; i < _shipManager.ships.Length; i++)
 			{
-				livesWidgets[i].gameObject.SetActive(_shipManager.ships[i].owner.IsConnected);
+				livesWidgets[i].gameObject.SetActive(_shipManager.ships[i].owner.isConnected);
 
-				if (_shipManager.ships[i].owner.IsConnected)
+				if (_shipManager.ships[i].owner.isConnected)
 				{
 					livesWidgets[i].Setup(_shipManager.ships[i].currentLife);
 				}

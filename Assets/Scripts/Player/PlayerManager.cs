@@ -12,29 +12,35 @@ namespace Player
 
         private void Update()
         {
-            if (GameManager.Instance.CurrentGameState == GameManager.GameState.MENU)
+            
+
+            HandlePlayerConnected();
+            HandleInputs();
+        }
+
+        public void HandlePlayerConnected()
+        {
+            if (GameManager.Instance.CurrentGameState != GameManager.GameState.MENU) return;
+            
+            foreach (var player in players)
             {
-                foreach (var player in players)
+                if (Input.GetKeyDown(player.inputData.thrust))
                 {
-                    if (Input.GetKeyDown(player.inputData.thrust))
-                    {
-                        player.IsConnected = true;
-                        OnChangePlayers.Invoke();
-                    }
-                    if (Input.GetKeyDown(player.inputData.down))
-                    {
-                        player.IsConnected = false;
-                        OnChangePlayers.Invoke();
-                    }
+                    player.isConnected = true;
+                    OnChangePlayers.Invoke();
+                }
+                if (Input.GetKeyDown(player.inputData.down))
+                {
+                    player.isConnected = false;
+                    OnChangePlayers.Invoke();
                 }
             }
-
-            HandleInputs();
+            
         }
         void HandleInputs(){
             foreach (var player in players)
             {
-                if (player.IsConnected)
+                if (player.isConnected)
                 {
                     player.input.right = Input.GetKey(player.inputData.right);
                     player.input.left = Input.GetKey(player.inputData.left);

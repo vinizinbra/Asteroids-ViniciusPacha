@@ -7,7 +7,7 @@ namespace Player
     public class Player
     {
         public string name;
-        public bool IsConnected;
+        public bool isConnected;
         public MyPlayerInput input = new MyPlayerInput();
         public PlayerInputMappingData inputData;
     
