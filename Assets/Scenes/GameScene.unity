@@ -5339,15 +5339,15 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7414190c8ba76457e8d38530c3d1fc93, type: 2}
-  m_sharedMaterial: {fileID: -6003686723632782134, guid: 7414190c8ba76457e8d38530c3d1fc93, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2298478591
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.53333336}
+    rgba: 1476395007
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.34117648}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5370,7 +5370,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -5666,10 +5666,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press up to connect a player and down to disconnect
+  m_text: Press up to connect a player and down to disconnect
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7414190c8ba76457e8d38530c3d1fc93, type: 2}
-  m_sharedMaterial: {fileID: -6003686723632782134, guid: 7414190c8ba76457e8d38530c3d1fc93, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5699,7 +5699,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -6029,6 +6029,42 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8377977756836265284, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_text
+      value: Game Over
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377977756836265284, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377977756836265284, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7414190c8ba76457e8d38530c3d1fc93, type: 2}
+    - target: {fileID: 8377977756836265284, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377977756836265284, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377977756836265284, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6003686723632782134, guid: 7414190c8ba76457e8d38530c3d1fc93, type: 2}
+    - target: {fileID: 8377977757343260041, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377977757343260044, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_Color.a
+      value: 0.20392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377977757343260046, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 8377977757551082736, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -6127,7 +6163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377977757725990527, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8698979668874399763, guid: 4fa29b6d986fc41fe89fc679656e2286, type: 3}
       propertyPath: m_AnchorMax.y
