@@ -16,10 +16,10 @@ namespace Ship
         public ShipData data;
 
         public ShipView view;
-        private void Start()
+        private void Awake()
         {
-            _startPosition = rbd.Position;
-            _startAngle = rbd.angle;
+            _startPosition = transform.position;
+            _startAngle = 0;
             SetDefaultValues();
         }
 

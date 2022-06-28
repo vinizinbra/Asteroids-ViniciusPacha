@@ -14,7 +14,7 @@ namespace UI.Windows
 		public override void Show()
 		{
 			base.Show();
-			level.text = string.Format("Level {0}",GameManager.Instance.level);
+			level.text = string.Format("Level {0}",GameManager.Instance.Level);
 		}
 
 		private void Start()
@@ -41,7 +41,6 @@ namespace UI.Windows
 				{
 					livesWidgets[i].Setup(0);
 				}
-		    
 			}
 		    
 		}

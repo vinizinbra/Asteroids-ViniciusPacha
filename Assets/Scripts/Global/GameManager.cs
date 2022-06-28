@@ -34,6 +34,8 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public object Level => level + 1;
+
     public void StartGame()
     {
         CurrentGameState = GameState.INGAME;

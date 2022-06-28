@@ -5120,6 +5120,10 @@ PrefabInstance:
       propertyPath: players.Array.data[0].IsConnected
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7783440468301161978, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
+      propertyPath: players.Array.data[0].isConnected
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc2df5ab2c764f338f2a2cbc51be2b1, type: 3}
 --- !u!4 &1111170026 stripped
