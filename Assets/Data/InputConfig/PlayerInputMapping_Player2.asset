@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcbd62852d0c474cb5175fb3cd47aa5, type: 3}
   m_Name: PlayerInputMapping_Player2
   m_EditorClassIdentifier: 
-  fire: 48
+  fire: 256
   right: 275
   left: 276
   down: 274
