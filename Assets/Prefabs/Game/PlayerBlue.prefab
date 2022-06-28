@@ -4892,7 +4892,6 @@ GameObject:
   - component: {fileID: 8751030019907931099}
   - component: {fileID: 8751030019907931073}
   - component: {fileID: 8751030019907931097}
-  - component: {fileID: 8751030019907931100}
   - component: {fileID: 8751030019907931098}
   - component: {fileID: 8751030019907931102}
   - component: {fileID: 8751030019907931101}
@@ -5007,7 +5006,7 @@ MonoBehaviour:
   onCollision:
     m_PersistentCalls:
       m_Calls: []
-  collider: {fileID: 8751030019907931099}
+  myCollider: {fileID: 8751030019907931099}
 --- !u!114 &8751030019907931097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5021,24 +5020,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbodyObject: {fileID: 8751030019907931073}
---- !u!114 &8751030019907931100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8751030019907931074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da6175be07bf4d41993d878d71c476d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myInput:
-    right: 0
-    left: 0
-    down: 0
-    up: 0
-    fire: 0
 --- !u!114 &8751030019907931098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5056,7 +5037,7 @@ MonoBehaviour:
   owner:
     name: 
     IsConnected: 0
-    input: {fileID: 0}
+    inputData: {fileID: 0}
   collisionDelay: 0
   currentLife: 0
   isThrusting: 0
@@ -5075,7 +5056,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipEntity: {fileID: 8751030019907931098}
-  input: {fileID: 8751030019907931100}
 --- !u!114 &8751030019907931101
 MonoBehaviour:
   m_ObjectHideFlags: 0

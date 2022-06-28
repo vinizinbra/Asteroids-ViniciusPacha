@@ -113,7 +113,7 @@ MonoBehaviour:
   onCollision:
     m_PersistentCalls:
       m_Calls: []
-  collider: {fileID: 6085296320683255279}
+  myCollider: {fileID: 6085296320683255279}
 --- !u!114 &6085296320683255279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 6802248450042984664}
   - component: {fileID: 9172533107418200418}
   m_Layer: 0
-  m_Name: BigExplosion (2)
+  m_Name: ExplosionSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +229,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}

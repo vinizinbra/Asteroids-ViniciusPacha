@@ -43,7 +43,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 1
   simulationSpeed: 1
-  stopAction: 0
+  stopAction: 1
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -4992,7 +4992,7 @@ MonoBehaviour:
   onCollision:
     m_PersistentCalls:
       m_Calls: []
-  collider: {fileID: 2751278149494102075}
+  myCollider: {fileID: 2751278149494102075}
 --- !u!114 &2751278149494102075
 MonoBehaviour:
   m_ObjectHideFlags: 0

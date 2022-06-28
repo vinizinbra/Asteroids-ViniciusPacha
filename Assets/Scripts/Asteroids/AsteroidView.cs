@@ -1,7 +1,6 @@
 using Extensions;
 using MyEvents;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Asteroids
 {
@@ -31,9 +30,10 @@ namespace Asteroids
             }
         }
 
-        public void CreateExplosionParticle(Vector3 position)
+        void CreateExplosionParticle(Vector3 position)
         {
             explosionParticle.transform.position = position;
+            explosionParticle.gameObject.SetActive(true);
             explosionParticle.UnparentAndPlay();
         }
     }
